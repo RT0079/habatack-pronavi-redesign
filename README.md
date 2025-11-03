@@ -23,16 +23,18 @@ Habatack - ProNavi Website Redesign for Hackathon
 ---
 
 ## 🧩 ディレクトリ構成
+
 src/
 ├── index.html
 ├── assets/
-│ ├── css/
-│ │ └── style.css
-│ ├── js/
-│ │ └── main.js
-│ └── img/
+│   ├── css/
+│   │   └── style.css
+│   ├── js/
+│   │   └── main.js
+│   └── img/
 docs/
 design/
+
 
 
 ---
