@@ -1,0 +1,21 @@
+# macOS system files
+.DS_Store
+Thumbs.db
+
+# Editor settings
+.vscode/
+.idea/
+
+# Design files (optional)
+design/*.fig
+design/*.xd
+
+# Logs
+*.log
+
+# Node.js modules (for future use)
+node_modules/
+
+# Environment & cache
+.env
+*.tmp
