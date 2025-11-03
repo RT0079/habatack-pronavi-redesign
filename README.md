@@ -62,6 +62,23 @@ design/
 - コミットメッセージは英語ベース推奨（例：`feat: add header section`）  
 - main への直接pushは禁止（保護ルールあり）  
 
+### 🔖 コミットメッセージのprefix一覧
+| prefix | 用途 | 例 |
+|---------|------|----|
+| `feat:` | 新しい機能・セクションの追加 | `feat: add hero section` |
+| `fix:` | バグ修正・動作不具合の修正 | `fix: correct footer layout` |
+| `docs:` | ドキュメント（READMEなど）の更新 | `docs: update project rules` |
+| `style:` | 見た目・フォーマットの調整（機能変更なし） | `style: adjust button spacing` |
+| `refactor:` | コードのリファクタリング（機能は同じ） | `refactor: simplify header script` |
+| `chore:` | 設定やビルド関連などの雑務 | `chore: update .gitignore` |
+| `test:` | テスト関連の追加・修正 | `test: add form validation test` |
+
+💬 例：
+```bash
+git commit -m "feat: add navigation bar"
+
+
+
 ---
 w
 ## 📝 今後のTODO
