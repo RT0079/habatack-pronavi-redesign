@@ -1,0 +1,36 @@
+@use "sass:map";
+
+/* ========== 変数 ========== */
+$ink: #222831;        // header / footer
+$deep: #393E46;       // dark sections
+$accent: #FFD369;     // yellow
+$soft: #EEEEEE;       // light bg
+$sand: #D6D3CC;       // light warm
+$nav-base: #246688;       // light warm
+$signup: #D45A42;       // light warm
+$signup-border: #e6b351;       // light warm
+$main: #20336D      ; // deep blue
+$radius: 12px;
+$shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+
+$breakpoints: (
+    md: 960px,
+    sm: 640px
+);
+
+@mixin respond($size) {
+    $value: map.get($breakpoints, $size);
+    @if $value {
+        @media (max-width: $value) {
+            @content;
+        }
+    } @else {
+        @media (max-width: $size) {
+            @content;
+        }
+    }
+}
+
+
+
+
