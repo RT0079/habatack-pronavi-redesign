@@ -1,5 +1,6 @@
 @charset "UTF-8";
-/* ========== 変数 ========== */ /* =========================================
+/* ========== 変数 ========== */
+/* =========================================
    _reset.scss  |  Minimal Reset + Base (2025)
    - ブラウザ差を最小限に抑える軽量リセット
    - 本プロジェクトのベース（フォント/カラー/レイアウト共通）を同梱
@@ -153,40 +154,58 @@ body {
   box-sizing: border-box;
 }
 
-.hero {
+.metaleaf {
   position: relative;
-  min-height: 70vh;
+  min-height: 50vh;
+  background-color: #20336D;
   overflow: hidden;
-  background: #20336D;
   color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
 }
-.hero-bg {
+.metaleaf::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("../images/MetaLeaf/image_8.png");
+  background-position: center bottom;
+  background-size: cover;
+  opacity: 0.2;
+  z-index: -1;
+}
+.metaleaf h1 {
+  font-size: 150px;
+}
+.metaleaf-img {
+  width: 150px;
+}
+.metaleaf-bg {
   position: absolute;
   inset: 0;
   pointer-events: none;
 }
-.hero-media {
+.metaleaf-media {
   position: absolute;
   inset: 0;
   background-size: cover;
   background-position: center;
 }
-.hero-media-left {
-  background-image: url("../images/main-pic/about.jpg");
-  -webkit-clip-path: polygon(0 0, 60% 0, 35% 100%, 0% 100%);
-          clip-path: polygon(0 0, 60% 0, 35% 100%, 0% 100%);
+.metaleaf-media-left {
+  background-image: url("assets/images/metaLeaf/image_8png");
+  clip-path: polygon(0 0, 60% 0, 35% 100%, 0% 100%);
 }
-.hero-media-right {
+.metaleaf-media-right {
   background-image: url("../images/main-pic/mainvisual.jpg");
-  -webkit-clip-path: polygon(60% 0, 100% 0, 100% 100%, 35% 100%);
-          clip-path: polygon(60% 0, 100% 0, 100% 100%, 35% 100%);
+  clip-path: polygon(60% 0, 100% 0, 100% 100%, 35% 100%);
 }
-.hero-copy {
+.metaleaf-copy {
   width: 35vw;
   background-color: blue;
   z-index: 1;
 }
-.hero-inner {
+.metaleaf-inner {
   position: relative;
   z-index: 1;
   max-width: 1100px;
@@ -196,12 +215,12 @@ body {
   align-items: center;
   min-height: 70vh;
 }
-.hero-title {
+.metaleaf-title {
   font-size: clamp(2.8rem, 6vw, 4.5rem);
   letter-spacing: 0.12em;
   margin-bottom: 1.5rem;
 }
-.hero-tagline {
+.metaleaf-tagline {
   font-size: clamp(1.2rem, 2.2vw, 1.6rem);
   line-height: 1.6;
   max-width: 32rem;
@@ -220,9 +239,8 @@ body {
   left: 0;
   right: 0;
   height: 100%;
-  background: linear-gradient(180deg, #20336D 0%, #a7b6e5 80%, white 100%);
-  -webkit-clip-path: polygon(0 0, 35% 0, 15% 100%, 0 100%);
-          clip-path: polygon(0 0, 35% 0, 15% 100%, 0 100%);
+  background: linear-gradient(180deg, #20336D 0%, rgb(166.8723404255, 182.2340425532, 229.1276595745) 80%, white 100%);
+  clip-path: polygon(0 0, 35% 0, 15% 100%, 0 100%);
   opacity: 0.6;
   z-index: -1;
 }
@@ -419,5 +437,4 @@ body {
     background: white;
     border-radius: 999px;
   }
-}
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=metaleaf.css.map */
