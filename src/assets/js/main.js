@@ -6,4 +6,6 @@ document.addEventListener("DOMContentLoaded", () => {
   centerMode: true,
   centerPadding: '0px',
   arrows: true,
+  prevArrow: '<button class="slick-prev"></button>',
+  nextArrow: '<button class="slick-next"></button>'
  });

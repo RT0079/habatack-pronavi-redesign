@@ -253,6 +253,7 @@ body {
 .slide-item li {
   text-align: center;
   display: flex;
+  flex-direction: column;
 }
 
 .slick-slide {
@@ -268,11 +269,31 @@ body {
   position: relative;
 }
 
+.slick-prev:before, .slick-next:before {
+  display: none !important;
+}
+
 .slick-prev, .slick-next {
+  width: 0;
+  height: 0;
+  border-style: solid !important;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   z-index: 10;
+  cursor: pointer;
+}
+
+.slick-prev {
+  border-width: 20px 25px 20px 0 !important;
+  border-color: transparent #2C9944 transparent transparent !important;
+  left: -40px;
+}
+
+.slick-next {
+  border-width: 20px 0 20px 25px !important;
+  border-color: transparent transparent transparent #2C9944 !important;
+  right: -40px;
 }
 
 /*.about{
