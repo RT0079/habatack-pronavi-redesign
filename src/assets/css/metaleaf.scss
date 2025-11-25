@@ -124,7 +124,7 @@
            width: 150px;
          }
 }
-
+/*全体*/
 body {
     background-color: #E8E2D6;;
 }
@@ -134,20 +134,65 @@ body {
     margin: 0 auto;
     background-color: #E8E2D6;
 }
-
+/*メタリーフとは*/
 .metaleafabout {
    display: flex;
    flex-direction: column;
    align-items: center;
    text-align: center;
+
+   h2 {
+       margin-top: 80px;
+       margin-bottom: 50px;
+      }
+
+   p {
+    margin-bottom: 0;
+   }
+
 }
 
+/*活用方法*/
 .howto {
     h2 {
         width: 100%;
-        text-align: center;
+        display: flex;
         background-color: #2C9944;
         color: white;
+        height: 120px;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        margin-top: 80px;
+    }
+
+    h2::after {
+        content: "";
+        position: absolute;
+        bottom: -49px;
+        left: 50%;
+        border-left: 50px solid transparent;
+        border-right: 50px solid transparent;
+        border-top: 50px solid #2C9944;
+        transform: translate(-50%);
+    }
+
+    h3 {
+        margin-top: 80px;
+        margin-bottom: 50px;
+    }
+}
+
+.howto-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    ul {
+        list-style: none;
+        width: 800px;
+        overflow: hidden;
+        
     }
 }
    
