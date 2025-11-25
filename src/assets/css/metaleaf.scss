@@ -110,78 +110,52 @@
          position: absolute;
          inset: 0;
          background-image: url("../images/MetaLeaf/image_8.png");
-         background-position: center bottom;
+         background-position: center top;
          background-size: cover;
-         opacity: 0.2; // ← 透過率調整
+         opacity: 0.2; 
          z-index: -1;
-
-        
-  }
-
-  h1 {
-    font-size: 150px;
-  }
-  
-  &-img{
-    width: 150px;
-  }
-
-    &-bg{
-        position: absolute;
-        inset: 0;
-        pointer-events: none;
-    }
-
-    &-media{
-        position: absolute;
-        inset: 0;
-        background-size: cover;
-        background-position: center;
-        
-        &-left{
-            background-image: url('assets/images/metaLeaf/image_8png');
-            clip-path: polygon(0 0, 60% 0, 35% 100%, 0% 100%);
         }
-
-        &-right{
-            background-image: url('../images/main-pic/mainvisual.jpg');
-            clip-path: polygon(60% 0, 100% 0, 100% 100%, 35% 100%);
-        }
-    }
-
-    // <<<<<<<< あとで消す >>>>>>>>
-    &-copy{
-        width: 35vw;
-        background-color: blue;
-        z-index: 1;
-    }
-
-    &-inner{
-        position: relative;
-        z-index: 1;
-        max-width: 1100px;
-        margin: 0 auto;
-        padding: 6rem 5vw 5rem 0;
-        display: flex;
-        align-items: center;
-        min-height: 70vh;
-    }
-
-    &-title{
-        font-size: clamp(2.8rem, 6vw, 4.5rem);
-        letter-spacing: 0.12em;
-        margin-bottom: 1.5rem;
-    }
-
-    &-tagline{
-        font-size: clamp(1.2rem, 2.2vw, 1.6rem);
-        line-height: 1.6;
-        max-width: 32rem;
-    }
+         
+         h1 {
+           font-size: 150px;
+         }
+         
+         &-img {
+           width: 150px;
+         }
 }
 
+body {
+    background-color: #E8E2D6;;
+}
+       
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #E8E2D6;
+}
+
+.metaleafabout {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   text-align: center;
+}
+
+.howto {
+    h2 {
+        width: 100%;
+        text-align: center;
+        background-color: #2C9944;
+        color: white;
+    }
+}
+   
+
+  
+
 // About
-.about{
+/*.about{
     position: relative;
     z-index: 0;
     padding: 4rem 5vw 4rem;
@@ -343,7 +317,7 @@
             }
         }
     }
-}
+}*/
 
 
 
