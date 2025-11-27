@@ -21,3 +21,18 @@ document.addEventListener("DOMContentLoaded", () => {
     right: '-60px'  
   });
 });
+
+$(function() {
+  $(".faq-question").on("click", function() {
+    const answer = $(this).next(".faq-answer");
+    const toggle = $(this).find(".faq-toggle");
+
+    if (answer.is(":visible")) {
+      answer.slideUp();
+      toggle.text("＋");
+    } else {
+      answer.slideDown();
+      toggle.text("−");
+    }
+  });
+});

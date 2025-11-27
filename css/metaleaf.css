@@ -189,7 +189,6 @@ body {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  background-color: #E8E2D6;
 }
 
 /*メタリーフとは*/
@@ -318,7 +317,7 @@ h4 {
 
 /*オフ会*/
 .garalley-track {
-  margin-top: 80;
+  margin-top: 80px;
   display: flex;
   gap: 20px;
   -webkit-animation: scrollLoop 25s linear infinite;

@@ -1,6 +1,5 @@
 @charset "UTF-8";
-/* ========== 変数 ========== */
-/* =========================================
+/* ========== 変数 ========== */ /* =========================================
    _reset.scss  |  Minimal Reset + Base (2025)
    - ブラウザ差を最小限に抑える軽量リセット
    - 本プロジェクトのベース（フォント/カラー/レイアウト共通）を同梱
@@ -154,7 +153,7 @@ body {
   box-sizing: border-box;
 }
 
-.metaleaf {
+.faq {
   position: relative;
   min-height: 50vh;
   background-color: #20336D;
@@ -165,183 +164,212 @@ body {
   align-items: center;
   z-index: 1;
 }
-.metaleaf::before {
+.faq::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url("../images/MetaLeaf/image_8.png");
+  background-image: url("../images/faq/Rectangle 192.jpg");
   background-position: center top;
   background-size: cover;
   opacity: 0.2;
   z-index: -1;
 }
-.metaleaf h1 {
+.faq h1 {
   font-size: 150px;
 }
-.metaleaf-img {
+.faq-img {
   width: 150px;
 }
 
-/*全体*/
 body {
   background-color: #E8E2D6;
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
-/*メタリーフとは*/
-.metaleafabout {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.faq-item {
+  margin: 100px auto;
+  border-radius: 30px;
+  overflow: hidden;
   text-align: center;
 }
-.metaleafabout h2 {
-  margin-top: 80px;
-  margin-bottom: 50px;
+
+.faq-question {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  border-radius: 30px;
+  width: 100%;
 }
-.metaleafabout p {
-  margin-bottom: 0;
+.faq-question img {
+  width: 200px;
+  height: auto;
+  margin-right: 15px;
 }
 
-/*活用方法*/
-h3 {
-  width: 100%;
-  display: flex;
-  background-color: #2C9944;
+.faq-taggle {
+  margin-left: 100px;
   color: white;
-  height: 120px;
+  background-color: black;
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+  display: block;
+  cursor: pointer;
+  font-size: 20px;
+  position: relative;
+}
+.faq-taggle::before {
+  content: "";
+  width: 16px;
+  height: 2px;
+  background-color: white;
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+  transition: 4s;
+}
+.faq-taggle::after {
+  content: "";
+  width: 2px;
+  height: 16px;
+  background-color: white;
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+  transition: 0.3s;
+}
+
+.faq-text {
+  display: flex;
+  padding: 20px 50px;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #fff;
+  border-radius: 30px;
+  transition: background-color 0.2s;
+}
+.faq-text:hover {
+  background-color: #e0e0e0;
+}
+
+.faq-answer {
+  display: none;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  background-color: #D45A42;
+  color: white;
+  border-radius: 30px;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.reason {
+  padding: 4rem 5vw 6rem;
+  background-color: #161156;
+  color: white;
+}
+.reason h2 {
+  display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0 auto;
+  gap: 20px;
   position: relative;
-  margin-top: 80px;
+  font-size: 1.75rem;
+  font-weight: 600;
 }
-
-h3::after {
+.reason h2::before, .reason h2::after {
   content: "";
-  position: absolute;
-  bottom: -49px;
-  left: 50%;
-  border-left: 50px solid transparent;
-  border-right: 50px solid transparent;
-  border-top: 50px solid #2C9944;
-  transform: translate(-50%);
-}
-
-h4 {
-  margin-top: 80px;
-  margin-bottom: 20px;
-  transform: rotate(-15deg);
-  display: inline-block;
-  font-size: 100px;
-  margin-left: 20px;
-  font-family: "Caveat", cursive;
-}
-
-.howto-slide {
-  margin: 0 auto;
-  width: 900px;
-}
-
-.slide-item {
-  width: 100%;
   display: block;
-  position: center top;
+  width: 35px;
+  height: 3px;
+  background-color: white;
 }
-.slide-item img {
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  height: 600px;
+.reason-circle {
+  position: relative;
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: center;
+  margin: 60px auto;
 }
-.slide-item li {
-  text-align: center;
+.reason-circle-skill {
+  width: 250px;
+  height: 250px;
+  background-color: white;
+  color: #222831;
+  border-radius: 50%;
   display: flex;
-  flex-direction: column;
-}
-.slide-item li p {
-  padding-top: 50px;
-  width: 80%;
-  margin: 0 auto;
-}
-
-.slick-slide {
-  display: flex;
+  align-items: center;
   justify-content: center;
 }
-
-.slick-slide img {
-  display: block;
-}
-
-.slick-list {
-  position: relative;
-}
-
-.slick-prev:before, .slick-next:before {
-  display: none !important;
-}
-
-.slick-prev, .slick-next {
-  width: 0;
-  height: 0;
-  border-style: solid !important;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 10;
-  cursor: pointer;
-}
-
-.slick-prev {
-  border-width: 20px 25px 20px 0 !important;
-  border-color: transparent #2C9944 transparent transparent !important;
-  left: -60px;
-}
-
-.slick-next {
-  border-width: 20px 0 20px 25px !important;
-  border-color: transparent transparent transparent #2C9944 !important;
-  right: -60px;
-}
-
-.other, container {
-  display: block;
+.reason-circle-skill h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  line-height: 1.4;
   text-align: center;
 }
-.other p, container p {
-  margin-top: 100px;
+.reason-circle .circle-left {
+  position: static;
+  background: radial-gradient(circle at center in hsl shorter hue, rgb(234, 174, 174), rgb(224, 209, 209) 60%);
 }
-
-/*オフ会*/
-.garalley-track {
-  margin-top: 80px;
+.reason-circle .circle-right {
+  position: static;
+  background: radial-gradient(circle at center in hsl shorter hue, rgb(142, 187, 207), rgb(202, 214, 236) 60%);
+}
+.reason span {
+  display: block;
+  max-width: 600px;
+  margin: 0 auto 3rem;
+}
+.reason span p {
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 3rem;
+}
+.reason-card-list {
   display: flex;
-  gap: 20px;
-  animation: scrollLoop 25s linear infinite;
-  width: -moz-max-content;
-  width: max-content;
+  flex-direction: column;
+  gap: 2rem;
+}
+.reason-card-list .reason-card {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  border-radius: 12px;
+  background-color: white;
+  color: #222831;
+}
+.reason-card-list .reason-card:nth-child(2) {
+  flex-direction: row-reverse;
+}
+.reason-card-list .reason-card .reason-pic {
+  width: 40%;
+  height: auto;
+  border-radius: 12px;
+}
+.reason-card-list .reason-card .reason-text {
+  padding: 0 1rem;
+}
+.reason-card-list .reason-card .reason-text h3 {
+  font-size: 1.3rem;
+  font-weight: 800;
 }
 
-.garalley-item img {
-  width: 300px;
-  height: 200px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  border-radius: 10px;
-}
-
-@keyframes scrollLoop {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
 @media (max-width: 960px) {
   .global-nav {
     width: 90%;
@@ -410,4 +438,5 @@ h4 {
     background: white;
     border-radius: 999px;
   }
-}/*# sourceMappingURL=metaleaf.css.map */
+}
+/*# sourceMappingURL=Q&A.css.map */

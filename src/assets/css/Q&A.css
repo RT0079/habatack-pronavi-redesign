@@ -154,105 +154,127 @@ body {
   box-sizing: border-box;
 }
 
-.hero {
+.faq {
   position: relative;
-  min-height: 70vh;
+  min-height: 50vh;
+  background-color: #20336D;
   overflow: hidden;
-  background: #20336D;
   color: #fff;
-}
-.hero-bg {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-}
-.hero-media {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-}
-.hero-media-left {
-  background-image: url("../images/main-pic/about.jpg");
-  clip-path: polygon(0 0, 60% 0, 35% 100%, 0% 100%);
-}
-.hero-media-right {
-  background-image: url("../images/main-pic/mainvisual.jpg");
-  clip-path: polygon(60% 0, 100% 0, 100% 100%, 35% 100%);
-}
-.hero-copy {
-  width: 35vw;
-  background-color: blue;
-  z-index: 1;
-}
-.hero-inner {
-  position: relative;
-  z-index: 1;
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 6rem 5vw 5rem 0;
-  display: flex;
-  align-items: center;
-  min-height: 70vh;
-}
-.hero-title {
-  font-size: clamp(2.8rem, 6vw, 4.5rem);
-  letter-spacing: 0.12em;
-  margin-bottom: 1.5rem;
-}
-.hero-tagline {
-  font-size: clamp(1.2rem, 2.2vw, 1.6rem);
-  line-height: 1.6;
-  max-width: 32rem;
-}
-
-.about {
-  position: relative;
-  z-index: 0;
-  padding: 4rem 5vw 4rem;
-  background-color: white;
-}
-.about::before {
-  content: "";
-  position: absolute;
-  top: 0px;
-  left: 0;
-  right: 0;
-  height: 100%;
-  background: linear-gradient(180deg, #20336D 0%, rgb(166.8723404255, 182.2340425532, 229.1276595745) 80%, white 100%);
-  clip-path: polygon(0 0, 35% 0, 15% 100%, 0 100%);
-  opacity: 0.6;
-  z-index: -1;
-}
-.about-inner {
-  position: relative;
-  z-index: 0;
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 12vw 2rem;
-}
-.about-inner h2 {
-  font-size: 1.75rem;
-  font-weight: 600;
-  margin-bottom: 35px;
-  line-height: 1.5;
-  -webkit-text-decoration: underline yellow 7px;
-          text-decoration: underline yellow 7px;
-}
-.about-inner p {
-  line-height: 1.2;
-  font-weight: 600;
-}
-.about .stats {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 4rem;
-  margin: 1rem auto 3rem;
+  z-index: 1;
 }
-.about .stats-img {
-  width: 120px;
+.faq::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("../images/faq/Rectangle 192.jpg");
+  background-position: center top;
+  background-size: cover;
+  opacity: 0.2;
+  z-index: -1;
+}
+.faq h1 {
+  font-size: 150px;
+}
+.faq-img {
+  width: 150px;
+}
+
+body {
+  background-color: #E8E2D6;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  margin: 100px auto;
+  border-radius: 30px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.faq-question {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  border-radius: 30px;
+  width: 100%;
+}
+.faq-question img {
+  width: 200px;
   height: auto;
+  margin-right: 15px;
+}
+
+.faq-taggle {
+  margin-left: 100px;
+  color: white;
+  background-color: black;
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+  display: block;
+  cursor: pointer;
+  font-size: 20px;
+  position: relative;
+}
+.faq-taggle::before {
+  content: "";
+  width: 16px;
+  height: 2px;
+  background-color: white;
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+  transition: 4s;
+}
+.faq-taggle::after {
+  content: "";
+  width: 2px;
+  height: 16px;
+  background-color: white;
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+  transition: 0.3s;
+}
+
+.faq-text {
+  display: flex;
+  padding: 20px 50px;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #fff;
+  border-radius: 30px;
+  transition: background-color 0.2s;
+}
+.faq-text:hover {
+  background-color: #e0e0e0;
+}
+
+.faq-answer {
+  display: none;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  background-color: #D45A42;
+  color: white;
+  border-radius: 30px;
+  width: 70%;
+  margin: 0 auto;
 }
 
 .reason {
@@ -417,4 +439,4 @@ body {
     background: white;
     border-radius: 999px;
   }
-}/*# sourceMappingURL=Q$A.css.map */
+}/*# sourceMappingURL=Q&A.css.map */

@@ -94,122 +94,141 @@
 // メイン
 
 // ヒーロー
-.hero{
+.faq {
     position:relative;
-    min-height: 70vh;
+    min-height: 50vh;
+    background-color: #20336D;
     overflow: hidden;
-    background: $main;
     color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
 
-    &-bg{
-        position: absolute;
-        inset: 0;
-        pointer-events: none;
-    }
-
-    &-media{
-        position: absolute;
-        inset: 0;
-        background-size: cover;
-        background-position: center;
-        
-        &-left{
-            background-image: url('../images/main-pic/about.jpg');
-            clip-path: polygon(0 0, 60% 0, 35% 100%, 0% 100%);
+     &::before {
+         content: "";
+         position: absolute;
+         inset: 0;
+         background-image: url("../images/faq/Rectangle\ 192.jpg");
+         background-position: center top;
+         background-size: cover;
+         opacity: 0.2; 
+         z-index: -1;
         }
-
-        &-right{
-            background-image: url('../images/main-pic/mainvisual.jpg');
-            clip-path: polygon(60% 0, 100% 0, 100% 100%, 35% 100%);
-        }
-    }
-
-    // <<<<<<<< あとで消す >>>>>>>>
-    &-copy{
-        width: 35vw;
-        background-color: blue;
-        z-index: 1;
-    }
-
-    &-inner{
-        position: relative;
-        z-index: 1;
-        max-width: 1100px;
-        margin: 0 auto;
-        padding: 6rem 5vw 5rem 0;
-        display: flex;
-        align-items: center;
-        min-height: 70vh;
-    }
-
-    &-title{
-        font-size: clamp(2.8rem, 6vw, 4.5rem);
-        letter-spacing: 0.12em;
-        margin-bottom: 1.5rem;
-    }
-
-    &-tagline{
-        font-size: clamp(1.2rem, 2.2vw, 1.6rem);
-        line-height: 1.6;
-        max-width: 32rem;
-    }
+         
+         h1 {
+           font-size: 150px;
+         }
+         
+         &-img {
+           width: 150px;
+         }
 }
 
+//全体
+body {
+    background-color: #E8E2D6;;
+}
 
-// About
-.about{
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+// Q&Aセクション
+.faq-item {
+    margin: 100px auto;
+    border-radius: 30px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.faq-question {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    border-radius: 30px;
+    width: 100%;
+
+    img {
+    width: 200px;
+    height: auto;
+    margin-right: 15px;
+    }
+
+    
+    
+}
+
+.faq-taggle {
+    margin-left: 100px;
+    color: white;
+    background-color: black;
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    display: block;
+    cursor: pointer;
+    font-size: 20px;
     position: relative;
-    z-index: 0;
-    padding: 4rem 5vw 4rem;
-    background-color: white;
 
-    &::before{
+    &::before {
         content: "";
+        width: 16px;
+        height: 2px;
+        background-color: white;
+        display: block;
         position: absolute;
-        top: 0px;
-        left: 0;
+        top: 0;
         right: 0;
-        height: 100%;
-        background: linear-gradient(180deg, $main 0%, lighten($main, 50%) 80%, white 100%);
-        clip-path: polygon(0 0, 35% 0, 15% 100%, 0 100%);
-        opacity: 0.6;
-        z-index: -1;
+        left: 0;
+        bottom: 0;
+        margin: auto;
+        transition: 4s;
     }
 
-    &-inner{
-        position: relative;
-        z-index: 0;
-        max-width: 1100px;
-        margin: 0 auto;
-        padding: 0 12vw 2rem;
-
-        & h2 {
-            font-size: 1.75rem;
-            font-weight: 600;
-            margin-bottom: 35px;
-            line-height: 1.5;
-            text-decoration: underline yellow  7px;
-        }
-        & p{
-            line-height: 1.2;
-            font-weight: 600;
-        }
+    &::after {
+        content: "";
+        width: 2px;
+        height: 16px;
+        background-color: white;
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        margin: auto;
+        transition: 0.3s;
     }
+}
+.faq-text {
+    display: flex;
+    padding: 20px 50px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #fff;
+    border-radius: 30px;
+    transition: background-color 0.2s;
 
-    & .stats{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 4rem;
-        margin: 1rem auto 3rem;
 
-        &-img{
-            width: 120px;
-            height: auto;
-        }
+    &:hover {
+        background-color: #e0e0e0;
     }
 }
 
+
+.faq-answer {
+    display: none;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    background-color: #D45A42;
+    color: white;
+    border-radius: 30px;
+    width: 70%;  
+    margin: 0 auto; 
+}
 
 .reason{
     padding: 4rem 5vw 6rem;
