@@ -22,17 +22,13 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+// FAQのアコーディオン
 $(function() {
   $(".faq-question").on("click", function() {
     const answer = $(this).next(".faq-answer");
-    const toggle = $(this).find(".faq-toggle");
+    const toggle = $(this).find(".faq-taggle");
 
-    if (answer.is(":visible")) {
-      answer.slideUp();
-      toggle.text("＋");
-    } else {
-      answer.slideDown();
-      toggle.text("−");
-    }
+    toggle.toggleClass('open');                 
+    answer.stop(true, true).slideToggle();
   });
 });

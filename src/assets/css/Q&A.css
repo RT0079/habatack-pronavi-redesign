@@ -187,7 +187,7 @@ body {
 }
 
 .container {
-  max-width: 1100px;
+  max-width: 900px;
   margin: 0 auto;
 }
 
@@ -204,7 +204,6 @@ body {
   justify-content: center;
   padding: 15px;
   border-radius: 30px;
-  width: 100%;
 }
 .faq-question img {
   width: 200px;
@@ -213,7 +212,6 @@ body {
 }
 
 .faq-taggle {
-  margin-left: 100px;
   color: white;
   background-color: black;
   border-radius: 100%;
@@ -252,15 +250,20 @@ body {
   margin: auto;
   transition: 0.3s;
 }
+.faq-taggle.open::after {
+  transform: rotate(90deg);
+}
 
 .faq-text {
   display: flex;
+  justify-content: space-between;
   padding: 20px 50px;
   font-weight: bold;
   cursor: pointer;
   background-color: #fff;
   border-radius: 30px;
   transition: background-color 0.2s;
+  width: 80%;
 }
 .faq-text:hover {
   background-color: #e0e0e0;
@@ -275,100 +278,6 @@ body {
   border-radius: 30px;
   width: 70%;
   margin: 0 auto;
-}
-
-.reason {
-  padding: 4rem 5vw 6rem;
-  background-color: #161156;
-  color: white;
-}
-.reason h2 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-  gap: 20px;
-  position: relative;
-  font-size: 1.75rem;
-  font-weight: 600;
-}
-.reason h2::before, .reason h2::after {
-  content: "";
-  display: block;
-  width: 35px;
-  height: 3px;
-  background-color: white;
-}
-.reason-circle {
-  position: relative;
-  display: grid;
-  grid-auto-flow: column;
-  justify-content: center;
-  margin: 60px auto;
-}
-.reason-circle-skill {
-  width: 250px;
-  height: 250px;
-  background-color: white;
-  color: #222831;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.reason-circle-skill h3 {
-  margin: 0;
-  font-size: 1.5rem;
-  line-height: 1.4;
-  text-align: center;
-}
-.reason-circle .circle-left {
-  position: static;
-  background: radial-gradient(circle at center in hsl shorter hue, rgb(234, 174, 174), rgb(224, 209, 209) 60%);
-}
-.reason-circle .circle-right {
-  position: static;
-  background: radial-gradient(circle at center in hsl shorter hue, rgb(142, 187, 207), rgb(202, 214, 236) 60%);
-}
-.reason span {
-  display: block;
-  max-width: 600px;
-  margin: 0 auto 3rem;
-}
-.reason span p {
-  text-align: center;
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-bottom: 3rem;
-}
-.reason-card-list {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-.reason-card-list .reason-card {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  padding: 2rem;
-  border-radius: 12px;
-  background-color: white;
-  color: #222831;
-}
-.reason-card-list .reason-card:nth-child(2) {
-  flex-direction: row-reverse;
-}
-.reason-card-list .reason-card .reason-pic {
-  width: 40%;
-  height: auto;
-  border-radius: 12px;
-}
-.reason-card-list .reason-card .reason-text {
-  padding: 0 1rem;
-}
-.reason-card-list .reason-card .reason-text h3 {
-  font-size: 1.3rem;
-  font-weight: 800;
 }
 
 @media (max-width: 960px) {
