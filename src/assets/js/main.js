@@ -102,6 +102,8 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', onScroll);
   }
 });
+
+
  $(".slide-item").slick({
   slidesToShow: 1,
   centerMode: true,
