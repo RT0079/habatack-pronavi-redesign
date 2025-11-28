@@ -162,6 +162,8 @@ body {
         align-items: center;
         position: relative;
         margin-top: 80px;
+        font-size: 50px;
+        font-weight: bold;
     }
 
     h3::after {
@@ -277,11 +279,19 @@ h4 {
   width: max-content;
 }
 
-.garalley-item img {
+.garalley-item {
+    img {
   width: 300px;
   height: 200px;
   object-fit: cover;
   border-radius: 10px;
+    }
+    p {
+        margin-top: 10px;
+        font-size: 16px;
+        width: 300px;
+    }
+    
 }
 
 @keyframes scrollLoop {

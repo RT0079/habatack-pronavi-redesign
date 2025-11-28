@@ -217,6 +217,8 @@ h3 {
   align-items: center;
   position: relative;
   margin-top: 80px;
+  font-size: 50px;
+  font-weight: bold;
 }
 
 h3::after {
@@ -333,6 +335,11 @@ h4 {
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 10px;
+}
+.garalley-item p {
+  margin-top: 10px;
+  font-size: 16px;
+  width: 300px;
 }
 
 @-webkit-keyframes scrollLoop {
