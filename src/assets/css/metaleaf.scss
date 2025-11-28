@@ -126,7 +126,7 @@
 }
 /*全体*/
 body {
-    background-color: #E8E2D6;;
+    background-color: #E2E5ED;
 }
        
 .container {
@@ -155,7 +155,7 @@ body {
     h3 {
         width: 100%;
         display: flex;
-        background-color: #2C9944;
+        background-color: #20336D;
         color: white;
         height: 120px;
         justify-content: center;
@@ -173,7 +173,7 @@ body {
         left: 50%;
         border-left: 50px solid transparent;
         border-right: 50px solid transparent;
-        border-top: 50px solid #2C9944;
+        border-top: 50px solid #20336D;
         transform: translate(-50%);
     }
 
@@ -251,41 +251,62 @@ h4 {
 
 .slick-prev {
   border-width: 20px 25px 20px 0 !important;
-  border-color: transparent #2C9944 transparent transparent !important;
+  border-color: transparent #20336D transparent transparent !important;
   left: -60px;
 }
 
 .slick-next {
   border-width: 20px 0 20px 25px !important;
-  border-color: transparent transparent transparent #2C9944 !important;
+  border-color: transparent transparent transparent #20336D !important;
   right: -60px;
 }
 
-.other,container {
+/*.other .container {
+    width: 100%;
     display: block;
     text-align: center;
+    overflow: hidden;
+    box-sizing: border-box;
 
     p {
         margin-top: 100px;
     }
-}
+}*/
 
 /*オフ会*/
-.garalley-track {
-  margin-top: 80px;
-  display: flex;
-  gap: 20px;
-  animation: scrollLoop 25s linear infinite;
-  width: max-content;
+.other {
+    width: 100%;
+    overflow: hidden;
+    display: block;
+    box-sizing: border-box;
+    text-align: center;
+
+    .text1 {
+        margin-top: 100px;
+    }
+}
+.other .garalley-track {
+    position: relative;
+    margin-top: 80px;
+    display: flex;
+    gap: 20px;
+    animation: scrollLoop 25s linear infinite;
+    width: max-content;
+    will-change: max-content;
+    
+
 }
 
-.garalley-item {
+.other .garalley-item {
+    flex-shrink: 0;
     img {
-  width: 300px;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 10px;
-    }
+        width: 300px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+        display: block;
+          }
+        
     p {
         margin-top: 10px;
         font-size: 16px;
@@ -298,53 +319,6 @@ h4 {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
