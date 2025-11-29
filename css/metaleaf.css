@@ -203,8 +203,13 @@ body {
 .metaleafabout h2 {
   margin-top: 80px;
   margin-bottom: 50px;
+  font-weight: bold;
+  font-size: 2rem;
+  display: inline;
+  box-shadow: inset 0 -15px 0 #FFF176;
 }
-.metaleafabout p {
+
+p {
   margin-bottom: 0;
 }
 
@@ -493,6 +498,12 @@ h4 {
   }
   .metaleaf {
     min-height: 35vh;
+  }
+  h2 {
+    font-size: 1em !important;
+  }
+  h3 {
+    font-size: 1.5rem;
   }
   .slick-prev {
     border-width: 14px 16px 14px 0 !important;
