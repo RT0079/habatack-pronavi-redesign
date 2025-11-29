@@ -236,7 +236,7 @@ body {
   left: 0;
   bottom: 0;
   margin: auto;
-  transition: 4s;
+  transition: 0.2s ease;
 }
 .faq-taggle::after {
   content: "";
@@ -250,7 +250,7 @@ body {
   left: 0;
   bottom: 0;
   margin: auto;
-  transition: 0.3s;
+  transition: 0.2s ease;
 }
 .faq-taggle.open::after {
   transform: rotate(90deg);
@@ -390,7 +390,7 @@ body {
     border-radius: 999px;
   }
   .faq-text {
-    gap: 8px;
+    gap: 20px;
     width: 100%;
     margin: 0 auto;
   }
