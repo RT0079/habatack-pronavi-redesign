@@ -191,6 +191,10 @@ body {
   margin: 0 auto;
 }
 
+.faq {
+  margin-bottom: 50px;
+}
+
 .faq-item {
   border-radius: 30px;
   overflow: hidden;
@@ -289,6 +293,38 @@ body {
   .global-nav {
     width: 90%;
   }
+  .faq {
+    min-height: 40vh;
+    width: 100%;
+  }
+  .faq-item {
+    display: flex;
+    flex-direction: column;
+  }
+  .faq-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .faq-answer {
+    width: 90%;
+  }
+  .faq-taggle {
+    width: 30px;
+    height: 30px;
+  }
+  .faq-taggle::after {
+    width: 13px;
+    height: 1px;
+  }
+  .faq-taggle::before {
+    width: 1px;
+    height: 13px;
+  }
 }
 @media (max-width: 640px) {
   .global-nav {
@@ -352,5 +388,25 @@ body {
     height: 2px;
     background: white;
     border-radius: 999px;
+  }
+  .faq-text {
+    gap: 8px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .faq-answer {
+    width: 90%;
+  }
+  .faq-taggle {
+    width: 25px;
+    height: 25px;
+  }
+  .faq-taggle::after {
+    width: 10px;
+    height: 1px;
+  }
+  .faq-taggle::before {
+    width: 1px;
+    height: 10px;
   }
 }/*# sourceMappingURL=Q&A.css.map */

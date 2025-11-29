@@ -155,6 +155,7 @@ body {
 
 .metaleaf {
   position: relative;
+  width: 100%;
   min-height: 50vh;
   background-color: #20336D;
   overflow: hidden;
@@ -171,6 +172,7 @@ body {
   background-image: url("../images/MetaLeaf/image_8.png");
   background-position: center top;
   background-size: cover;
+  background-repeat: no-repeat;
   opacity: 0.2;
   z-index: -1;
 }
@@ -309,17 +311,6 @@ h4 {
   right: -60px;
 }
 
-/*.other .container {
-    width: 100%;
-    display: block;
-    text-align: center;
-    overflow: hidden;
-    box-sizing: border-box;
-
-    p {
-        margin-top: 100px;
-    }
-}*/
 /*オフ会*/
 .other {
   width: 100%;
@@ -382,6 +373,33 @@ h4 {
 @media (max-width: 960px) {
   .global-nav {
     width: 90%;
+  }
+  .metaleaf {
+    min-height: 40vh;
+    width: 100%;
+  }
+  .metaleaf img {
+    width: 100px;
+  }
+  .metaleaf h1 {
+    font-size: 100px;
+  }
+  .nav-list {
+    margin-left: 0;
+  }
+  .slick-prev, .slick-next {
+    border-width: 14px 16px 14px 0 !important;
+    top: 55%;
+  }
+  .slick-prev {
+    left: 6px;
+    right: 6px;
+    border-width: 14px 16px 14px 0 !important;
+  }
+  .slick-next {
+    right: 6px;
+    left: 6px;
+    border-width: 14px 0 14px 16px !important;
   }
 }
 @media (max-width: 640px) {
@@ -446,6 +464,9 @@ h4 {
     height: 2px;
     background: white;
     border-radius: 999px;
+  }
+  .metaleaf {
+    min-height: 35vh;
   }
 }
 /*# sourceMappingURL=metaleaf.css.map */
