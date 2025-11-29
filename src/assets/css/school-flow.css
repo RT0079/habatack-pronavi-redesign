@@ -1,5 +1,56 @@
 @charset "UTF-8";
-/* ========== 変数 ========== */ /* =========================================
+/* ========== 変数 ========== */
+:root {
+  --nav-offset: 6rem;
+}
+
+@media (max-width: 640px) {
+  body {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  .hero .hero-visual img {
+    width: 100%;
+    height: auto;
+  }
+  .hero .hero-text- {
+    padding: 1rem;
+    text-align: center;
+  }
+  .about h2 {
+    font-size: 1.5rem;
+  }
+  .about p {
+    font-size: 0.9rem;
+  }
+  .reason-card .reason-pic img {
+    width: 100%;
+    height: auto;
+  }
+  .reason-card .reason-text {
+    padding: 1rem;
+  }
+  .teacher .teacher-inner {
+    flex-direction: column;
+  }
+  .teacher .teacher-inner-left,
+  .teacher .teacher-inner-right {
+    width: 100%;
+  }
+  .teacher .teacher-list-card {
+    margin-bottom: 1rem;
+  }
+  .graduate-work .graduate-col {
+    width: 100%;
+  }
+  .graduate-work .graduate-card {
+    margin-bottom: 1rem;
+  }
+  footer .signup-btn {
+    margin: 1rem auto;
+  }
+}
+/* =========================================
    _reset.scss  |  Minimal Reset + Base (2025)
    - ブラウザ差を最小限に抑える軽量リセット
    - 本プロジェクトのベース（フォント/カラー/レイアウト共通）を同梱
@@ -15,7 +66,7 @@ html,
 body {
   margin: 0;
   padding: 0;
-  min-width: 320px; /* スマホ極小幅での崩れ防止 */
+  min-width: 360px; /* スマホ極小幅での崩れ防止 */
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -70,6 +121,25 @@ body {
   line-height: 1.75;
 }
 
+@media (max-width: 640px) {
+  img,
+  picture,
+  video,
+  canvas,
+  svg {
+    max-width: 100%;
+    height: auto;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-size: 1rem;
+  }
+  ul, ol {
+    padding-left: 1rem;
+  }
+  button {
+    font-size: 0.9rem;
+  }
+}
 /* ========== 変数 ========== */
 /* =========================================
    _reset.scss  |  Minimal Reset + Base (2025)
@@ -256,14 +326,12 @@ body {
 
 .hero-media-left {
   background-image: url("../images/main-pic/about.jpg");
-  -webkit-clip-path: polygon(0 0, 60% 0, 35% 100%, 0% 100%);
-          clip-path: polygon(0 0, 60% 0, 35% 100%, 0% 100%);
+  clip-path: polygon(0 0, 60% 0, 35% 100%, 0% 100%);
 }
 
 .hero-media-right {
   background-image: url("../images/main-pic/mainvisual.jpg");
-  -webkit-clip-path: polygon(60% 0, 100% 0, 100% 100%, 35% 100%);
-          clip-path: polygon(60% 0, 100% 0, 100% 100%, 35% 100%);
+  clip-path: polygon(60% 0, 100% 0, 100% 100%, 35% 100%);
 }
 
 .hero-copy {
@@ -309,9 +377,8 @@ body {
   left: 0;
   right: 0;
   height: 100%;
-  background: linear-gradient(180deg, #20336d 0%, rgb(167, 182, 229) 80%, white 100%);
-  -webkit-clip-path: polygon(0 0, 35% 0, 15% 100%, 0 100%);
-          clip-path: polygon(0 0, 35% 0, 15% 100%, 0 100%);
+  background: linear-gradient(180deg, #20336d 0%, rgb(166.8723404255, 182.2340425532, 229.1276595745) 80%, white 100%);
+  clip-path: polygon(0 0, 35% 0, 15% 100%, 0 100%);
   opacity: 0.6;
   z-index: -1;
 }
@@ -529,7 +596,7 @@ body {
     background: white;
     border-radius: 999px;
   }
-}
+} 
 .flow-section {
   background-color: #20336d;
   padding: 0;
@@ -652,5 +719,4 @@ body {
 
 .slick-list {
   margin: 0 -10px; /* ← はみ出し分を打ち消して全体幅を整える */
-}
-/*# sourceMappingURL=school-flow.css.map */
+}/*# sourceMappingURL=school-flow.css.map */

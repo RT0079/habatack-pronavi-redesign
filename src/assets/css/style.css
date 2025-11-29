@@ -360,7 +360,8 @@ body {
   font-weight: 600;
   margin-bottom: 4rem;
   line-height: 1.5;
-  text-decoration: underline yellow 7px;
+  -webkit-text-decoration: underline yellow 7px;
+          text-decoration: underline yellow 7px;
 }
 .about-inner p {
   font-size: 1.5rem;
@@ -1005,6 +1006,69 @@ body {
   display: none;
 }
 
+footer {
+  background: linear-gradient(180deg, rgba(9, 14, 36, 0.92), rgba(9, 14, 36, 0.98));
+  color: #f5f7ff;
+  padding: 2.5rem 8vw;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+footer .footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+footer img {
+  width: 160px;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.35));
+}
+footer .footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+  text-align: right;
+}
+footer .footer-content-text {
+  display: flex;
+  gap: 1.25rem;
+}
+footer .footer-content-text a {
+  color: rgba(245, 247, 255, 0.8);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.15s ease;
+}
+footer .footer-content-text a:hover {
+  color: #fff;
+}
+footer p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: rgba(245, 247, 255, 0.7);
+}
+
+@media (max-width: 640px) {
+  footer {
+    padding: 2rem 6vw;
+  }
+  footer .footer-inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  footer .footer-content {
+    align-items: center;
+  }
+  footer .footer-content-text {
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+}
 @media (max-width: 960px) {
   .hero {
     min-height: min(100vh, 100svh);
@@ -1089,22 +1153,28 @@ body {
     background: white;
     border-radius: 999px;
   }
+  .graduate-work {
+    padding: 5rem 0 6rem;
+  }
   .graduate-work-inner {
     position: relative;
     top: auto;
     min-height: auto;
     padding: 0 1rem;
+    gap: 3rem;
   }
   .graduate-work-grid {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
   .graduate-work .graduate-col--right {
     display: none;
   }
   .graduate-work .graduate-col {
     height: auto;
+    max-width: 420px;
     overflow: visible;
-    width: 70vw;
+    width: 80vw;
     margin: 0 auto;
   }
   .graduate-work .graduate-col:hover {
@@ -1120,12 +1190,14 @@ body {
   }
   .graduate-work .graduate-card img {
     border-radius: 0 0 14px 14px;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
   .graduate-work .graduate-dots {
     display: flex;
     justify-content: center;
     gap: 0.5rem;
-    margin-top: 1rem;
+    margin-top: 0.5rem;
   }
   .graduate-work .graduate-dots__dot {
     width: 12px;
@@ -1254,6 +1326,38 @@ body {
   .teacher-slider-nav__btn--next::before {
     border-left: 18px solid #D45A42;
   }
+  .gm-message {
+    padding: 7rem 6vw 9rem;
+  }
+  .gm-message-content {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas: "left right" "text text";
+    gap: 1.25rem;
+    min-height: auto;
+    padding: 0 2rem;
+    align-items: start;
+    justify-items: center;
+  }
+  .gm-message-content .gm-left {
+    grid-area: left;
+    top: 0;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 300px;
+  }
+  .gm-message-content .gm-right {
+    grid-area: right;
+    top: 0;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 300px;
+  }
+  .gm-message-content .gm-text {
+    grid-area: text;
+    font-size: 1.1rem;
+    padding-top: 1.25rem;
+  }
 }
 @media (max-width: 640px) {
   body {
@@ -1352,6 +1456,38 @@ body {
   }
   .teacher-slider-nav {
     display: none;
+  }
+  .gm-message {
+    padding: 6rem 6vw 8rem;
+  }
+  .gm-message-content {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas: "left right" "text text";
+    gap: 1rem;
+    min-height: auto;
+    padding: 0 1rem;
+    align-items: start;
+    justify-items: center;
+  }
+  .gm-message-content .gm-left {
+    grid-area: left;
+    top: 0;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 280px;
+  }
+  .gm-message-content .gm-right {
+    grid-area: right;
+    top: 0;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 280px;
+  }
+  .gm-message-content .gm-text {
+    grid-area: text;
+    font-size: 1.05rem;
+    padding-top: 1rem;
   }
   .site-header .menu-toggle {
     display: inline-flex;
