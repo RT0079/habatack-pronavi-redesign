@@ -1,4 +1,75 @@
 @charset "UTF-8";
+/* ========== 変数 ========== */ /* =========================================
+   _reset.scss  |  Minimal Reset + Base (2025)
+   - ブラウザ差を最小限に抑える軽量リセット
+   - 本プロジェクトのベース（フォント/カラー/レイアウト共通）を同梱
+   ========================================= */
+/* ========== Reset: 基本 ========== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 320px; /* スマホ極小幅での崩れ防止 */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-weight: normal;
+}
+
+/* ========== Reset: メディア要素 ========== */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* ========== Reset: フォーム/インタラクティブ ========== */
+input,
+button,
+textarea,
+select {
+  font: inherit; /* プロジェクトのフォント継承 */
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* ========== Reset: リスト/リンク/テーブル ========== */
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  font-family: "Noto Sans JP", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.75;
+}
+
 /* ========== 変数 ========== */
 /* =========================================
    _reset.scss  |  Minimal Reset + Base (2025)
@@ -19,7 +90,12 @@ body {
   min-width: 320px; /* スマホ極小幅での崩れ防止 */
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 0;
   font-weight: normal;
 }
@@ -115,12 +191,14 @@ body {
   padding: 0;
   gap: 0.5rem;
 }
+
 .nav-list li {
   list-style: none;
   height: 100%;
   display: flex;
   align-items: center;
 }
+
 .nav-list li a {
   display: flex;
   align-items: center;
@@ -132,6 +210,7 @@ body {
   padding: 0 0.75rem;
   border-radius: 0.75rem;
 }
+
 .nav-list li a:hover {
   background-color: rgba(255, 255, 255, 0.2);
 }
@@ -148,7 +227,7 @@ body {
   justify-content: center;
   padding: 0.6rem 1.5rem;
   border-radius: 999px;
-  background-color: #D45A42;
+  background-color: #d45a42;
   color: #222831;
   border: 1px solid #e6b351;
   box-sizing: border-box;
@@ -158,33 +237,41 @@ body {
   position: relative;
   min-height: 70vh;
   overflow: hidden;
-  background: #20336D;
+  background: #20336d;
   color: #fff;
 }
+
 .hero-bg {
   position: absolute;
   inset: 0;
   pointer-events: none;
 }
+
 .hero-media {
   position: absolute;
   inset: 0;
   background-size: cover;
   background-position: center;
 }
+
 .hero-media-left {
   background-image: url("../images/main-pic/about.jpg");
-  clip-path: polygon(0 0, 60% 0, 35% 100%, 0% 100%);
+  -webkit-clip-path: polygon(0 0, 60% 0, 35% 100%, 0% 100%);
+          clip-path: polygon(0 0, 60% 0, 35% 100%, 0% 100%);
 }
+
 .hero-media-right {
   background-image: url("../images/main-pic/mainvisual.jpg");
-  clip-path: polygon(60% 0, 100% 0, 100% 100%, 35% 100%);
+  -webkit-clip-path: polygon(60% 0, 100% 0, 100% 100%, 35% 100%);
+          clip-path: polygon(60% 0, 100% 0, 100% 100%, 35% 100%);
 }
+
 .hero-copy {
   width: 35vw;
   background-color: blue;
   z-index: 1;
 }
+
 .hero-inner {
   position: relative;
   z-index: 1;
@@ -195,11 +282,13 @@ body {
   align-items: center;
   min-height: 70vh;
 }
+
 .hero-title {
   font-size: clamp(2.8rem, 6vw, 4.5rem);
   letter-spacing: 0.12em;
   margin-bottom: 1.5rem;
 }
+
 .hero-tagline {
   font-size: clamp(1.2rem, 2.2vw, 1.6rem);
   line-height: 1.6;
@@ -212,6 +301,7 @@ body {
   padding: 4rem 5vw 4rem;
   background-color: white;
 }
+
 .about::before {
   content: "";
   position: absolute;
@@ -219,11 +309,13 @@ body {
   left: 0;
   right: 0;
   height: 100%;
-  background: linear-gradient(180deg, #20336D 0%, rgb(166.8723404255, 182.2340425532, 229.1276595745) 80%, white 100%);
-  clip-path: polygon(0 0, 35% 0, 15% 100%, 0 100%);
+  background: linear-gradient(180deg, #20336d 0%, rgb(167, 182, 229) 80%, white 100%);
+  -webkit-clip-path: polygon(0 0, 35% 0, 15% 100%, 0 100%);
+          clip-path: polygon(0 0, 35% 0, 15% 100%, 0 100%);
   opacity: 0.6;
   z-index: -1;
 }
+
 .about-inner {
   position: relative;
   z-index: 0;
@@ -231,17 +323,21 @@ body {
   margin: 0 auto;
   padding: 0 12vw 2rem;
 }
+
 .about-inner h2 {
   font-size: 1.75rem;
   font-weight: 600;
   margin-bottom: 35px;
   line-height: 1.5;
-  text-decoration: underline yellow 7px;
+  -webkit-text-decoration: underline yellow 7px;
+          text-decoration: underline yellow 7px;
 }
+
 .about-inner p {
   line-height: 1.2;
   font-weight: 600;
 }
+
 .about .stats {
   display: flex;
   justify-content: center;
@@ -249,6 +345,7 @@ body {
   gap: 4rem;
   margin: 1rem auto 3rem;
 }
+
 .about .stats-img {
   width: 120px;
   height: auto;
@@ -259,6 +356,7 @@ body {
   background-color: #161156;
   color: white;
 }
+
 .reason h2 {
   display: flex;
   justify-content: center;
@@ -269,13 +367,16 @@ body {
   font-size: 1.75rem;
   font-weight: 600;
 }
-.reason h2::before, .reason h2::after {
+
+.reason h2::before,
+.reason h2::after {
   content: "";
   display: block;
   width: 35px;
   height: 3px;
   background-color: white;
 }
+
 .reason-circle {
   position: relative;
   display: grid;
@@ -283,6 +384,7 @@ body {
   justify-content: center;
   margin: 60px auto;
 }
+
 .reason-circle-skill {
   width: 250px;
   height: 250px;
@@ -293,36 +395,43 @@ body {
   align-items: center;
   justify-content: center;
 }
+
 .reason-circle-skill h3 {
   margin: 0;
   font-size: 1.5rem;
   line-height: 1.4;
   text-align: center;
 }
+
 .reason-circle .circle-left {
   position: static;
   background: radial-gradient(circle at center in hsl shorter hue, rgb(234, 174, 174), rgb(224, 209, 209) 60%);
 }
+
 .reason-circle .circle-right {
   position: static;
   background: radial-gradient(circle at center in hsl shorter hue, rgb(142, 187, 207), rgb(202, 214, 236) 60%);
 }
+
 .reason span {
   display: block;
   max-width: 600px;
   margin: 0 auto 3rem;
 }
+
 .reason span p {
   text-align: center;
   font-size: 1.25rem;
   font-weight: 600;
   margin-bottom: 3rem;
 }
+
 .reason-card-list {
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
+
 .reason-card-list .reason-card {
   display: flex;
   align-items: center;
@@ -332,17 +441,21 @@ body {
   background-color: white;
   color: #222831;
 }
+
 .reason-card-list .reason-card:nth-child(2) {
   flex-direction: row-reverse;
 }
+
 .reason-card-list .reason-card .reason-pic {
   width: 40%;
   height: auto;
   border-radius: 12px;
 }
+
 .reason-card-list .reason-card .reason-text {
   padding: 0 1rem;
 }
+
 .reason-card-list .reason-card .reason-text h3 {
   font-size: 1.3rem;
   font-weight: 800;
@@ -416,4 +529,128 @@ body {
     background: white;
     border-radius: 999px;
   }
-}/*# sourceMappingURL=style.css.map */
+}
+.flow-section {
+  background-color: #20336d;
+  padding: 0;
+}
+
+.flow-main-visual {
+  width: 100%;
+  height: 100vh;
+  background-image: url("../images/school_flow/hand.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+.flow-main-visual .section-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 3rem;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+}
+
+.flow {
+  display: flex;
+  justify-content: center;
+  padding: 60px 20px;
+}
+
+.flow-card {
+  background: #f6f6f6;
+  width: 1000px;
+  padding: 40px 30px 50px;
+  border-radius: 30px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.flow-step {
+  background: #d45a42;
+  color: #000000;
+  padding: 10px 0;
+  border-radius: 20px;
+  font-weight: bold;
+  width: 60%;
+  margin: 0 auto 20px;
+  font-size: 1rem;
+  letter-spacing: 2px;
+}
+
+.flow-title {
+  font-size: 1.3rem;
+  margin-bottom: 25px;
+  font-weight: bold;
+}
+
+.flow-image {
+  width: 180px;
+  height: 180px;
+  margin: 0 auto 30px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.flow-image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.flow-text {
+  line-height: 1.9;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.voice-main-visual {
+  width: 100%;
+  height: 100vh;
+  background-image: url("../images/school_flow/pc.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+.voice-main-visual .section-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 3rem;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+}
+
+.voice-section {
+  /* 例: スライダーを囲む親 */
+  background-color: #f0f0f0;
+  padding: 40px 0; /* 上下の余白も調整可 */
+}
+
+.slider {
+  width: 90%;
+  margin: 0 auto;
+  background-color: #fff;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.slider img {
+  width: 100%;
+  display: block;
+}
+
+.slick-slide {
+  margin: 0 10px; /* ← 左右10pxずつ余白を作る（値は自由に調整） */
+}
+
+.slick-list {
+  margin: 0 -10px; /* ← はみ出し分を打ち消して全体幅を整える */
+}
+/*# sourceMappingURL=school-flow.css.map */
