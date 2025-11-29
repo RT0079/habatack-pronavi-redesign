@@ -73,3 +73,26 @@ body {
   // color: $ink;   /* プロジェクトのカラー変数（例: #0F172A など） */
   // background: $deep; /* 背景色の変数（例: #F8FAFC など） */
 }
+
+@include respond(sm) {
+  img,
+  picture,
+  video,
+  canvas,
+  svg {
+    max-width: 100%; // Ensure media elements scale properly
+    height: auto;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-size: 1rem; // Adjust heading sizes
+  }
+
+  ul, ol {
+    padding-left: 1rem; // Add padding for better readability
+  }
+
+  button {
+    font-size: 0.9rem; // Adjust button font size
+  }
+}

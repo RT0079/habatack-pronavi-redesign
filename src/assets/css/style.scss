@@ -2,6 +2,7 @@
 @use 'reset' as *;
 @use 'common' as *;
 @use 'sass:color';
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Nastaliq+Urdu:wght@400;600&family=Scheherazade+New:wght@400;700&display=swap');
 
 
 .wrapper{
@@ -13,90 +14,7 @@
 
 // ヘッダー
 .site-header{
-    position: relative;
-
-    & .global-nav{
-        position: fixed;
-        top: 2rem;
-        left: 50%;
-        width: min(800px,90vw);
-        border-radius: 3rem;
-        background-color: $nav-base;
-        height: 4rem;
-        transform: translateX(-50%);
-        z-index: 999;
-        padding: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        & .nav-inner {
-            width: 100%;
-            display: flex;
-            align-items: center;
-            gap: 2.75rem;
-
-            & .nav-list{
-                flex: 1 1 auto;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                height: 100%;
-                margin-left: 50px;
-                padding: 0;
-                gap: .25rem;
-
-                & li{
-                    list-style: none;
-                    height: 100%;
-                    display: flex;
-                    align-items: center;
-
-                    & a{
-                        display: flex;
-                        align-items: center;
-                        height: 100%;
-                        text-decoration: none;
-                        color: white;
-                        font-size: 1.5rem;
-                        font-weight: 400;
-                        padding: 0 .75rem;
-                        border-radius: .75rem;
-
-                        &:hover{
-                            background-color: rgba(255, 255, 255, 0.2);
-                        }
-                    }
-                }
-            }
-
-            & .nav-cta{
-                flex-shrink: 0;
-                display: flex;
-                align-items: center;
-
-                & .signup-btn {
-                    display: inline-flex;
-                    align-items: center;
-                    justify-content: center;
-                    font-size: 1.25rem;
-                    padding: 0.9rem 1.75rem;
-                    border-radius: 999px;
-                    background-color: $signup;
-                    color: white;
-                    box-sizing: border-box;
-                }
-            }
-        }
-    }
-
-    & .menu-toggle{
-        display: none;
-        background: transparent;
-        border: none;
-        padding: 0;
-        z-index: 1000;
-    }
+    @include site-header-base;
 }
 
 
@@ -111,6 +29,16 @@
     background: $main;
     color: #fff;
 
+    &-visual{
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: 0; // 背景レイヤー
+        pointer-events: none;
+    }
+
     &-bg{
         position: absolute;
         inset: 0;
@@ -120,32 +48,41 @@
     &-media{
         position: absolute;
         inset: 0;
+        height: 100vh;
         background-size: cover;
-        background-position: center;
+        background-repeat: no-repeat;
+        
+        & img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
         
         &-left{
-            background-image: url('../images/main-pic/mainvisual-left.jpg');
-            clip-path: polygon(0 0, 60% 0, 35% 100%, 0% 100%);
-            background-color:#365f7bce;
+            position: relative;
+            clip-path: polygon(0 0, 50% 0, 40% 100%, 0% 100%);
+
+            &::after{
+                content: "";
+                position: absolute;
+                inset: 0;
+                background-color: rgba(7, 7, 53, 0.787);
+                mix-blend-mode: multiply;
+                pointer-events: none;
+            }
         }
 
         &-right{
-            background-image: url('../images/main-pic/reason2.jpeg');
-            clip-path: polygon(60% 0, 100% 0, 100% 100%, 35% 100%);
+            clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%);
+            transform: translateX(40%);
         }
-    }
-
-    // <<<<<<<< あとで消す >>>>>>>>
-    &-copy{
-        width: 35vw;
-        background-color: blue;
-        z-index: 1;
     }
 
     &-inner{
         position: relative;
         z-index: 1;
-        max-width: 1200px;
+        max-width: min(1440px, 90vw); // 横マージンを狭めてワイドに
         margin: 0 auto;
         padding: 6rem 5vw 5rem 0;
         display: flex;
@@ -153,14 +90,24 @@
         min-height: min(100vh, 100svh);
     }
 
+    &-text{
+        position: absolute;
+        left: 1vw; // さらに左寄せ
+        top: clamp(8vh, 12vh, 14vh); // 画面高さに応じて上下位置を可変
+        width: clamp(320px, 40vw, 520px); // 画面幅に応じて可変
+        z-index: 1;
+        padding: 1rem 2rem 2.5rem;
+        font-family: 'Noto Nastaliq Urdu', 'Scheherazade New', 'Amiri', serif;
+    }
+
     &-title{
-        font-size: clamp(2.8rem, 6vw, 4.5rem);
+        font-size: clamp(3.2rem, 7vw, 5rem);
         letter-spacing: 0.12em;
         margin-bottom: 1.5rem;
     }
 
     &-tagline{
-        font-size: clamp(1.2rem, 2.2vw, 1.6rem);
+        font-size: clamp(1.35rem, 2.6vw, 1.8rem);
         line-height: 1.6;
         max-width: 32rem;
     }
@@ -184,7 +131,7 @@
         right: 0;
         height: 100%;
         background: linear-gradient(180deg, rgba(156, 156, 240, 0.491) 0%, rgba(183, 183, 225, 0.511) 80%, rgb(223, 229, 244) 100%);
-        clip-path: polygon(0 0, 35% 0, 18% 100%, 0 100%);
+        clip-path: polygon(0 0, 40% 0, 30% 100%, 0 100%);
         opacity: 0.6;
         z-index: -1;
     }
@@ -198,14 +145,14 @@
         padding: 4rem 5vw 2rem;
 
         & h2 {
-            font-size: 2rem;
+            font-size:3rem;
             font-weight: 600;
             margin-bottom:4rem;
             line-height: 1.5;
             text-decoration: underline yellow  7px;
         }
         & p{
-            font-size: 1.25rem;
+            font-size: 1.5rem;
             line-height: 1.2;
             font-weight: 600;
         }
@@ -268,6 +215,7 @@
             & h3{
                 margin: 0;
                 font-size: 1.5rem;
+                font-weight: 700;
                 line-height: 1.4;
                 text-align: center;
             }
@@ -275,12 +223,12 @@
 
         & .circle-left{
             position: static;
-            background: radial-gradient(circle at center in hsl shorter hue, rgb(234, 174, 174), rgb(224, 209, 209) 60%);
+            background: radial-gradient(circle at center in hsl shorter hue, rgb(247, 173, 173), rgb(224, 209, 209) 60%);
         }
 
         & .circle-right{
             position: static;
-            background: radial-gradient(circle at center in hsl shorter hue, rgb(142, 187, 207), rgb(202, 214, 236) 60%);
+            background: radial-gradient(circle at center in hsl shorter hue, rgb(149, 205, 229), rgb(202, 214, 236) 60%);
         }
     }
 
@@ -309,7 +257,7 @@
         & .reason-card {
             display: flex;
             align-items: center;
-            gap: 2rem;
+            gap: 3rem;
             width: min(1200px, 100%);
             padding: 2rem;
             border-radius: $radius;
@@ -321,17 +269,32 @@
             }
 
             & .reason-pic {
-                width: 40%;
+                flex: 0 0 clamp(240px, 36%, 350px); // 3枚とも同じ幅感に統一
+                aspect-ratio: 4 / 3;
                 height: auto;
                 border-radius: $radius;
+                overflow: hidden;
+
+                & img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    display: block;
+                }
             }
 
             & .reason-text {
-                padding: 0 1rem;
+                padding: 0 1rem 5rem;
 
                 & h3 {
-                    font-size: 1.3rem;
+                    font-size: 1.75rem;
                     font-weight: 800;
+                    padding-bottom: 1rem;
+                }
+
+                & p {
+                    font-size: 1.2rem;
+                    line-height: 1.6;
                 }
             }
         }
@@ -481,8 +444,7 @@
         content:"";
         position: absolute;
         inset: 0;
-        background: rgba(41, 41, 85, 0.844);
-        // background: rgba(4, 6, 40, 0.844);
+        background: rgba(7, 7, 53, 0.787);
         z-index: 0;
     }
 
@@ -494,7 +456,7 @@
         align-items: center;
         justify-content: center;
         gap: 1.25rem;
-        background-color: $soft;
+        background-color: #A1AAC9;
         text-align: center;
         width: 60vw;
         max-width: 1200px;
@@ -505,15 +467,17 @@
         border-radius: 2rem;
 
         & h2 {
-            @include h2-with-bars(55px, 5px, $ink, 20px);
+            @include h2-with-bars(55px, 5px, #f5f7ff, 20px);
             margin: 0 auto;
             position: relative;
+            color: white;
             font-size: 4rem;
             font-weight: 600;
         }
 
         & h3 {
             font-size: 5rem;
+            color: white;
             font-weight: 700;
             margin-bottom: 20px;
 
@@ -525,7 +489,7 @@
 
         & p {
             color: $signup;
-            font-size: 1.5rem;
+            font-size: 2.2rem;
             text-decoration: double underline $signup 1.5px;
             text-underline-offset: 6px; // 文字と線の間隔を調整
         }
@@ -534,14 +498,16 @@
             display: block; // 1列
             list-style: disc;
             list-style-position: inside; // ドットを文字のすぐ横に
+            color: white;
             width: fit-content;
             margin: 1.5rem auto 0; // 中央配置
             padding: 0;
             text-align: left;
 
             & li {
-                font-size: 1rem;
+                font-size: 1.3rem;
                 margin-top: 1rem;
+                font-weight: 600;
             }
         }
     }
@@ -599,7 +565,7 @@
     &-inner {
         max-width: 1440px;
         margin: 0 auto;
-        padding: 6rem 5vw 1rem;
+        padding: 3rem 5vw 1rem;
         display: grid;
         grid-template-columns: minmax(0,1fr) minmax(0,1.4fr);
         grid-template-rows: auto 1fr;
@@ -684,7 +650,7 @@
             border-radius: 18px;
             box-shadow: 0 16px 32px rgba(0, 0, 0, 0.28);
             border: 2px solid rgba(255, 255, 255, 0.18);
-            margin-top: -5rem; // 位置を少し上に
+            margin-top: -7rem; // 位置を少し上に
             
             &::before{
                 content: "";
@@ -709,13 +675,13 @@
                     transition: opacity 0.25s ease, transform 0.25s ease;
 
                     & h3 {
-                        font-size: 2.5rem;
-                        margin-bottom: 1rem;
+                        font-size: 1.75rem;
+                        margin-bottom: 2rem;
                     }
 
                     & p {
                         line-height: 1.8;
-                        font-size: 1.5rem;
+                        font-size: 1.25rem;
                     }
 
                     // JSで利用
@@ -735,9 +701,9 @@
 // graduate work
 .graduate-work{
     position: relative;
-    padding: 10rem 0 0;
+    padding: 8rem 0 10rem;
     z-index: 0;
-    background: radial-gradient(circle at center, #d1e6f0 0%, #51a0dd 30%, #1b2f70 65%, #1f336d 100%);
+    background: radial-gradient(circle at center 60%, #d1e6f0 0%, #51a0dd 30%, #1b2f70 65%, #1f336d 100%);
     background-position: 50% 50%;
     background-attachment: fixed;
     background-size: 140% 140%;
@@ -745,13 +711,13 @@
 
     &-inner{
         position: sticky;
-        top: 12rem;
+        top: 8rem;
         min-height: calc(100vh - 5vh - 9rem);
         max-width: 1200px;
         margin: 0 auto;
         display: flex;
         flex-direction: column;
-        gap: 8rem;
+        gap: 6rem;
         align-items: center;
         z-index: 10;
 
@@ -777,6 +743,9 @@
     & .graduate-col{
         position: relative;
         aspect-ratio: 4 / 5; // 画像比率 (1080x1350) に合わせる
+        max-width: 540px; // カード自体をやや小さく
+        width: 100%;
+        margin: 0 auto;
         border-radius: 18px;
         overflow: hidden;
         background: #697ce4;
@@ -866,98 +835,6 @@
     display: none;
 }
 
-@include respond(md){
-    .graduate-work{
-        &-inner{
-            position: relative;
-            top: auto;
-            min-height: auto;
-            padding: 0 1rem;
-        }
-
-        &-grid{
-            grid-template-columns: 1fr;
-        }
-
-        .graduate-col--right{
-            display: none;
-        }
-
-        .graduate-col{
-            // スライダー用に高さを自動にして縦崩れ防止
-            height: auto;
-            overflow: visible; // 上部リボンをはみ出させる
-            // レスポンシブでは拡大ホバー無効
-            &:hover{
-                transform: none;
-                box-shadow: 0 18px 34px rgba(0, 0, 0, 0.35);
-            }
-            width: 70vw;
-            margin: 0 auto;
-        }
-
-        .graduate-card{
-            overflow: visible; // リボンを見せる
-            border-radius: 0 0 14px 14px;
-
-            &::before{
-                border-radius: 0 0 14px 14px;
-            }
-
-            & img{
-                border-radius: 0 0 14px 14px;
-            }
-        }
-
-        .graduate-dots{
-            display: flex;
-            justify-content: center;
-            gap: 0.5rem;
-            margin-top: 1rem;
-
-            &__dot{
-                width: 12px;
-                height: 12px;
-                border-radius: 50%;
-                border: 1px solid rgba(255,255,255,0.7);
-                background: transparent;
-                cursor: pointer;
-                transition: background .2s ease, transform .2s ease;
-
-                &.is-active{
-                    background: rgba(255,255,255,0.9);
-                    transform: scale(1.1);
-                }
-            }
-        }
-
-        .graduate-link{
-            position: absolute;
-            top: -3rem; // カード上端にぴったり付ける
-            left: 0;
-            right: 0;
-            height: 3rem;
-            display: none; // JSで表示切替
-            text-align: center;
-            padding: 0.65rem 1.25rem;
-            border-radius: 12px 12px 0 0;
-            background: $signup;
-            color: white;
-            font-weight: 700;
-            text-decoration: none;
-            box-shadow: 0 6px 12px rgba(0,0,0,0.25);
-            transition: transform .15s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            &:active{
-                transform: translateY(1px);
-            }
-        }
-    }
-}
-
 
 
 
@@ -1003,11 +880,11 @@
 // レスポンシブ
 @include respond(md){
     .hero{
-        min-height: min(92vh, 92svh);
+        min-height: min(100vh, 100svh);
     }
 
     .hero-inner{
-        min-height: min(92vh, 92svh);
+        min-height: min(100vh, 100svh);
         padding: 5rem 5vw 4rem 0;
     }
 
@@ -1094,6 +971,94 @@
             height: 2px;
             background: white;
             border-radius: 999px;
+        }
+    }
+
+    .graduate-work{
+        &-inner{
+            position: relative;
+            top: auto;
+            min-height: auto;
+            padding: 0 1rem;
+        }
+
+        &-grid{
+            grid-template-columns: 1fr;
+        }
+
+        .graduate-col--right{
+            display: none;
+        }
+
+        .graduate-col{
+            height: auto;
+            overflow: visible;
+            &:hover{
+                transform: none;
+                box-shadow: 0 18px 34px rgba(0, 0, 0, 0.35);
+            }
+            width: 70vw;
+            margin: 0 auto;
+        }
+
+        .graduate-card{
+            overflow: visible;
+            border-radius: 0 0 14px 14px;
+
+            &::before{
+                border-radius: 0 0 14px 14px;
+            }
+
+            & img{
+                border-radius: 0 0 14px 14px;
+            }
+        }
+
+        .graduate-dots{
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+
+            &__dot{
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+                border: 1px solid rgba(255,255,255,0.7);
+                background: transparent;
+                cursor: pointer;
+                transition: background .2s ease, transform .2s ease;
+
+                &.is-active{
+                    background: rgba(255,255,255,0.9);
+                    transform: scale(1.1);
+                }
+            }
+        }
+
+        .graduate-link{
+            position: absolute;
+            top: -3rem;
+            left: 0;
+            right: 0;
+            height: 3rem;
+            display: none;
+            text-align: center;
+            padding: 0.65rem 1.25rem;
+            border-radius: 12px 12px 0 0;
+            background: $signup;
+            color: white;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+            transition: transform .15s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &:active{
+                transform: translateY(1px);
+            }
         }
     }
 
@@ -1205,13 +1170,24 @@
 
 
 @include respond(sm) {
+    body{ overflow-x: hidden; }
+
     .hero{
-        min-height: min(90vh, 90svh);
+        min-height: min(100vh, 100svh);
     }
 
     .hero-inner{
-        min-height: min(90vh, 90svh);
-        padding: 4.5rem 6vw 3.5rem 0;
+        min-height: min(100vh, 100svh);
+        padding: 4.5rem 6vw 3.5rem 4vw;
+    }
+
+    .hero-media-right{
+        transform: none;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    .hero-media-left{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     }
 
     .site-header .global-nav {
@@ -1261,14 +1237,9 @@
                 line-height: 1.5;
                 padding: .75rem 1rem;
                 border-radius: .75rem;
+            }
         }
     }
-
-    .teacher-inner-left{
-        min-width: auto;
-        width: 100%;
-    }
-}
 
     .nav-cta{
         width: 100%;
@@ -1281,6 +1252,38 @@
         }
     }
 
+    .hero-text{
+        left: 4vw;
+        top: clamp(6vh, 10vh, 14vh);
+        width: clamp(280px, 80vw, 520px);
+        padding: 1rem 1.25rem 2rem;
+    }
+
+    .hero-title{
+        font-size: clamp(2.4rem, 6.5vw, 3.2rem);
+    }
+
+    .hero-tagline{
+        font-size: clamp(1rem, 3.3vw, 1.4rem);
+        max-width: 100%;
+    }
+
+    .teacher{
+        padding: 4rem 0 3rem;
+    }
+
+    .teacher-inner{
+        padding: 6rem 6vw 3rem;
+    }
+
+    .teacher-inner-left{
+        min-width: auto;
+        width: 100%;
+    }
+
+    .teacher-slider-nav{
+        display: none;
+    }
     .site-header .menu-toggle {
         display: inline-flex;
         position: fixed;

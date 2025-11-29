@@ -1,0 +1,48 @@
+@charset "UTF-8";
+@use 'reset' as *;
+@use 'common' as *;
+@use 'sass:color';
+
+.site-header {
+    background-color: white;
+    color: #01B902;
+    padding: 1rem 2rem 0.5rem;
+    font-size: 2rem;
+    font-weight: bold;
+    border-bottom: 4px solid rgb(0, 0, 0);
+}
+
+main {
+    text-align: center;
+    padding: 2rem;
+    align-items: center;
+    
+    & .QR-container {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1rem;
+
+        img {
+            width: 200px;
+            height: auto;
+            border: 1px solid $ink;
+        }
+    }
+
+    h2 {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+    };
+
+    p {
+        font-size: 0.85rem;
+        color: #999999;
+    };
+
+    a {
+        display: inline-block;
+        margin-top: 1rem;
+        color: #01B902;
+        font-weight: bold;
+    };
+}

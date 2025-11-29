@@ -4,6 +4,52 @@
   --nav-offset: 6rem;
 }
 
+@media (max-width: 640px) {
+  body {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  .hero .hero-visual img {
+    width: 100%;
+    height: auto;
+  }
+  .hero .hero-text- {
+    padding: 1rem;
+    text-align: center;
+  }
+  .about h2 {
+    font-size: 1.5rem;
+  }
+  .about p {
+    font-size: 0.9rem;
+  }
+  .reason-card .reason-pic img {
+    width: 100%;
+    height: auto;
+  }
+  .reason-card .reason-text {
+    padding: 1rem;
+  }
+  .teacher .teacher-inner {
+    flex-direction: column;
+  }
+  .teacher .teacher-inner-left,
+  .teacher .teacher-inner-right {
+    width: 100%;
+  }
+  .teacher .teacher-list-card {
+    margin-bottom: 1rem;
+  }
+  .graduate-work .graduate-col {
+    width: 100%;
+  }
+  .graduate-work .graduate-card {
+    margin-bottom: 1rem;
+  }
+  footer .signup-btn {
+    margin: 1rem auto;
+  }
+}
 /* =========================================
    _reset.scss  |  Minimal Reset + Base (2025)
    - ブラウザ差を最小限に抑える軽量リセット
@@ -75,6 +121,25 @@ body {
   line-height: 1.75;
 }
 
+@media (max-width: 640px) {
+  img,
+  picture,
+  video,
+  canvas,
+  svg {
+    max-width: 100%;
+    height: auto;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-size: 1rem;
+  }
+  ul, ol {
+    padding-left: 1rem;
+  }
+  button {
+    font-size: 0.9rem;
+  }
+}
 .site-header {
   position: relative;
 }
