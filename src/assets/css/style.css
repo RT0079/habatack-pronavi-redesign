@@ -1003,7 +1003,11 @@ body {
 }
 
 .graduate-link {
-  display: none;
+  position: absolute;
+  inset: 0;
+  display: block;
+  text-indent: -9999px;
+  cursor: pointer;
 }
 
 footer {
