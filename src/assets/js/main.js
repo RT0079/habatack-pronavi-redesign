@@ -7,7 +7,23 @@ document.addEventListener("DOMContentLoaded", () => {
   centerPadding: '0px',
   arrows: true,
   prevArrow: '<button class="slick-prev"></button>',
-  nextArrow: '<button class="slick-next"></button>'
+  nextArrow: '<button class="slick-next"></button>',
+  responsive: [
+    {
+      breakpoint: 960,
+      settings : {
+        arrows: true,
+        centerPadding: '20px',
+      }
+    },
+    {
+      breakpoint: 640,
+      setting : {
+        arrows: true,
+        centerPadding: '10px',
+      }
+    }
+  ]
  });
  $(document).ready(function(){
   const imgHeight = $('.slide-item img').height();
