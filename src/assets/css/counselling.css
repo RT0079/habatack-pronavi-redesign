@@ -1,0 +1,180 @@
+@charset "UTF-8";
+/* ========== 変数 ========== */
+:root {
+  --nav-offset: 6rem;
+}
+
+@media (max-width: 640px) {
+  body {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  .hero .hero-visual img {
+    width: 100%;
+    height: auto;
+  }
+  .hero .hero-text- {
+    padding: 1rem;
+    text-align: center;
+  }
+  .about h2 {
+    font-size: 1.5rem;
+  }
+  .about p {
+    font-size: 0.9rem;
+  }
+  .reason-card .reason-pic img {
+    width: 100%;
+    height: auto;
+  }
+  .reason-card .reason-text {
+    padding: 1rem;
+  }
+  .teacher .teacher-inner {
+    flex-direction: column;
+  }
+  .teacher .teacher-inner-left,
+  .teacher .teacher-inner-right {
+    width: 100%;
+  }
+  .teacher .teacher-list-card {
+    margin-bottom: 1rem;
+  }
+  .graduate-work .graduate-col {
+    width: 100%;
+  }
+  .graduate-work .graduate-card {
+    margin-bottom: 1rem;
+  }
+  footer .signup-btn {
+    margin: 1rem auto;
+  }
+}
+/* =========================================
+   _reset.scss  |  Minimal Reset + Base (2025)
+   - ブラウザ差を最小限に抑える軽量リセット
+   - 本プロジェクトのベース（フォント/カラー/レイアウト共通）を同梱
+   ========================================= */
+/* ========== Reset: 基本 ========== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 360px; /* スマホ極小幅での崩れ防止 */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-weight: normal;
+}
+
+/* ========== Reset: メディア要素 ========== */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* ========== Reset: フォーム/インタラクティブ ========== */
+input,
+button,
+textarea,
+select {
+  font: inherit; /* プロジェクトのフォント継承 */
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* ========== Reset: リスト/リンク/テーブル ========== */
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  font-family: "Noto Sans JP", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.75;
+}
+
+@media (max-width: 640px) {
+  img,
+  picture,
+  video,
+  canvas,
+  svg {
+    max-width: 100%;
+    height: auto;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-size: 1rem;
+  }
+  ul, ol {
+    padding-left: 1rem;
+  }
+  button {
+    font-size: 0.9rem;
+  }
+}
+.site-header {
+  background-color: white;
+  color: #01B902;
+  padding: 1rem 2rem 0.5rem;
+  font-size: 2rem;
+  font-weight: bold;
+  border-bottom: 4px solid rgb(0, 0, 0);
+}
+
+main {
+  text-align: center;
+  padding: 2rem;
+  align-items: center;
+}
+main .QR-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+main .QR-container img {
+  width: 200px;
+  height: auto;
+  border: 1px solid #222831;
+}
+main h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+main p {
+  font-size: 0.85rem;
+  color: #999999;
+}
+main a {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #01B902;
+  font-weight: bold;
+}/*# sourceMappingURL=counselling.css.map */
