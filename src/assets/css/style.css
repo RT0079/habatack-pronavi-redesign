@@ -245,8 +245,7 @@ body {
   font-weight: 600;
   margin-bottom: 4rem;
   line-height: 1.5;
-  -webkit-text-decoration: underline yellow 7px;
-          text-decoration: underline yellow 7px;
+  text-decoration: underline yellow 7px;
 }
 .about-inner p {
   font-size: 1.25rem;
