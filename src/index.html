@@ -7,12 +7,13 @@
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
 
+
   <body>
     <header class="site-header">
       <nav class="global-nav">
         <div class="nav-inner">
-          <ul id="global-nav" class="nav-list">
-            <li class="top-nav-link"><a href="#">TOP</a></li>
+          <ul class="nav-list">
+            <li class="top-nav-link"><a href="index.html">TOP</a></li>
             <li class="study-flow-nav-link"><a href="#">受講の流れ</a></li>
             <li class="workplace-nav-link"><a href="#">作業会</a></li>
             <li class="meetup-nav-link"><a href="#">オフ会</a></li>
@@ -22,12 +23,13 @@
           </div>
         </div>
       </nav>
-      <button class="menu-toggle" aria-controls="global-nav" aria-expanded="false" >
+      <button class="menu-toggle" aria-controls="global-nav" aria-expanded="false" aria-label="メニューを開閉" >
         <span></span>
         <span></span>
         <span></span>
       </button>
     </header>
+
 
     <main>
       <section class="hero" id="top">
@@ -46,7 +48,8 @@
         </div>
       </section>
 
-      <section class="about">
+
+      <section class="about wrapper">
         <div class="about-inner">
           <h2>
             学ぶだけで終わらせない。<br />「実践」と「収入化」まで導くコーチングスクール。
@@ -61,7 +64,7 @@
             本気でプログラミングができるようになりたいなら、プロナビにぜひお越しください。
           </p>
           <p>あなた以上に本気で向き合うコーチがお待ちしています。</p>
-        </div>
+      </div>
 
         <div class="stats">
           <div class="stats-img">
@@ -82,7 +85,8 @@
         </div>
       </section>
 
-      <section class="reason">
+
+      <section class="reason wrapper">
         <h2>ProNaviが選ばれている理由</h2>
 
         <div class="reason-circle">
@@ -148,77 +152,129 @@
         </div>
       </section>
 
-      <section class="gm-intro">
-        <h2>運営としての思い</h2>
-        <div class="gm-images">
-          <div class="gm-pic"><img src="assets/images/teachers/teacher.jpg" alt="かかし画像" /></div>
-          <div class="insta-icon"><img src="" alt="インスタicon" /></div>
-        </div>
-        <div class="gm-comment">
-          <h2>かかし</h2>
-          <p>
-            text text text text text text text text text text text text text
-          </p>
+
+      <section class="gm-message wrapper">
+        <h2>Message</h2>
+        <h3 class="gm-message-catch">「人生を変えたいと願う人に、力を与え続ける存在でありたい。」</h3>
+
+        <div class="gm-message-content">
+
+          <figure class="gm-left">
+            <div class="gm-left-img">
+              <img src="assets/images/main-pic/カカシ.jpg" alt="かかし画像">
+            </div>
+            <figcaption class="gm-sns">
+              <a href="#"><img src="assets/images/log-icon/icon.svg" alt="インスタアイコン"></a>
+            </figcaption>
+          </figure>
+
+          <div class="gm-text">
+            <p>エンジニアとして活躍する道筋を惜しみなくお伝えいたします。</p>
+            <p>学ぶことが目的ではなく未来の選択肢を広げるための武器を持てるプログラミング。</p>
+            <p>特別な才能は必要ありません。</p>
+            <p>やってみたいという想いと、小さな一歩で未来が変わる。</p>
+            <p>その一歩を無駄にさせない。</p>
+            <p>プロナビが全力でサポートします。</p>
+          </div>
+
+          <figure class="gm-right">
+            <div class="gm-right-img">
+              <img src="assets/images/main-pic/いるか.jpg" alt="いるか画像">
+            </div>
+            <figcaption class="gm-sns">
+              <a href="#"><img src="assets/images/log-icon/" alt="インスタアイコン"></a>
+            </figcaption>
+          </figure>
+
         </div>
 
-        <div class="gm-images">
-          <div class="gm-pic"><img src="assets/images/teachers/teacher.jpg" alt="いるか画像" /></div>
-          <div class="insta-icon"><img src="assets/images/teachers/teacher.jpg" alt="インスタicon" /></div>
-        </div>
-        <div class="gm-comment">
-          <h2>いるか</h2>
-          <p>
-            text text text text text text text text text text text text text
-          </p>
+        <div class="gm-message-media">
+          <p>＼ メディアでも紹介いただいています ／</p>
+          <div class="media-video">
+            <iframe src="https://www.youtube.com/embed/0Te2W50okgM?si=pql05TqPhYhAG2K6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
         </div>
       </section>
 
-      <section class="price">
-        <h2>Price</h2>
-        <p><span>¥</span>550,000</p>
-        <p>6ヶ月間集中プログラム</p>
-        <ul class="-list">
-          <li>24時間質問対応</li>
-          <li>あなただけの学習スケジュールを作成</li>
-          <li>定期的な講義で苦手を克服</li>
-          <li>学習スケジュール作成と習慣化のサポート</li>
-        </ul>
+
+      <section class="price wrapper">
+        <article class="price-content">
+          <h2>Price</h2>
+          <h3><span>¥</span>550,000</h3>
+          <p>6ヶ月間集中プログラム</p>
+          <ul class="price-content-list">
+            <li>あなただけの学習スケジュールを作成</li>
+            <li>24時間質問対応</li>
+            <li>学習スケジュール作成と習慣化のサポート</li>
+          </ul>
+        </article>
       </section>
+
 
       <!-- 講師紹介　　カードローテーション予定 -->
-      <section class="teacher-intro">
-        <article class="teacher-card">
-          <div class="teacher-pic">
-            <img src="assets/images/main-pic/teacher1.jpg" alt="講師画像" />
+      <section class="teacher wrapper">
+        <div class="teacher-inner">
+          <!-- 画面左 講師画像-->
+          <div class="teacher-inner-left">
+            <div class="teacher-list">
+              <!-- 講師１ -->
+              <div class="teacher-list-card is-active">
+                <img src="assets/images/teachers/teacher.jpg" alt="講師１画像">
+              </div>
+              <!-- 講師２ -->
+              <div class="teacher-list-card">
+                <img src="assets/images/teachers/teacher1.jpg" alt="講師2画像">
+              </div>
+              <!-- 講師３ -->
+              <div class="teacher-list-card">
+                <img src="assets/images/teachers/teacher2.jpg" alt="講師3画像">
+              </div>
+              <!-- 講師４ -->
+              <div class="teacher-list-card">
+                <img src="assets/images/teachers/teacher3.jpg" alt="講師4画像">
+              </div>
+            </div>
           </div>
-          <h3>講師名</h3>
-          <p>
-            text text text text text text text text text text text text text
-          </p>
-        </article>
 
-        <article class="teacher-card">
-          <div class="teacher-pic">
-            <img src="assets/images/main-pic/teacher1.jpg" alt="講師画像" />
-          </div>
-          <h3>講師名</h3>
-          <p>
-            text text text text text text text text text text text text text
-          </p>
-        </article>
+          <!-- 画面右 講師説明 -->
+           <div class="teacher-inner-right">
+            <div class="teacher-message">
+              <!-- 講師1コメント -->
+              <div class="teacher-message-text is-active">
+                <h3>講師1 コメント</h3>
+                <p>message message message message message message message
+                  message message message message message message </p>
+              </div>
+              <!-- 講師2コメント -->
+              <div class="teacher-message-text">
+                <h3>講師2 コメント</h3>
+                <p>message message message message message message message
+                  message message message message message message </p>
+              </div>
+              <!-- 講師3コメント -->
+              <div class="teacher-message-text">
+                <h3>講師3 コメント</h3>
+                <p>message message message message message message message
+                  message message message message message message </p>
+              </div>
+              <!-- 講師4コメント -->
+              <div class="teacher-message-text">
+                <h3>講師4 コメント</h3>
+                <p>message message message message message message message
+                  message message message message message message </p>
+              </div>
 
-        <article class="teacher-card">
-          <div class="teacher-pic">
-            <img src="assets/images/main-pic/teacher1.jpg" alt="講師画像" />
-          </div>
-          <h3>講師名</h3>
-          <p>
-            text text text text text text text text text text text text text
-          </p>
-        </article>
+            </div>
+           </div>
+        </div>
+
+
+
+
       </section>
 
-      <section class="graduate-work">
+
+      <section class="graduate-work wrapper">
         <div class="graduate-work-inner">
           <h2>卒業生の作品紹介</h2>
           <div class="graduate-card-track">
@@ -274,11 +330,12 @@
       </section>
     </main>
 
+
     <footer>
       <div><img src="assets/images/log-icon/logo.png" alt="" /></div>
       <div class="signup-btn"><a href="">無料カウンセリング</a></div>
     </footer>
 
-    <script src="assets/js/main.js"></script>
+  <script src="assets/js/main.js"></script>
   </body>
 </html>
