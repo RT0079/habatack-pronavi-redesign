@@ -96,6 +96,7 @@
 // ヒーロー
 .metaleaf{
     position:relative;
+    width: 100%;
     min-height: 50vh;
     background-color: #20336D;
     overflow: hidden;
@@ -112,6 +113,7 @@
          background-image: url("../images/MetaLeaf/image_8.png");
          background-position: center top;
          background-size: cover;
+         background-repeat: no-repeat;
          opacity: 0.2; 
          z-index: -1;
         }
@@ -126,13 +128,12 @@
 }
 /*全体*/
 body {
-    background-color: #E8E2D6;;
+    background-color: #E2E5ED;
 }
        
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    background-color: #E8E2D6;
 }
 /*メタリーフとは*/
 .metaleafabout {
@@ -144,37 +145,51 @@ body {
    h2 {
        margin-top: 80px;
        margin-bottom: 50px;
-      }
-
-   p {
-    margin-bottom: 0;
-   }
-
-}
-
-/*活用方法*/
-    h3 {
-        width: 100%;
-        display: flex;
-        background-color: #2C9944;
-        color: white;
-        height: 120px;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        margin-top: 80px;
+       font-weight: bold;
+       font-size: 2rem;
+       display: inline;
+       box-shadow: inset 0 -15px 0 #FFF176;
+       
     }
 
-    h3::after {
+    p {
+     font-weight: bold;
+    } 
+
+    }
+
+
+
+
+
+
+/*活用方法*/
+h3 {
+    width: 100%;
+    display: flex;
+    background-color: #20336D;
+    color: white;
+    height: 120px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-top: 80px;
+    font-size: 50px;
+    font-weight: bold;
+
+    &::after {
         content: "";
         position: absolute;
         bottom: -49px;
         left: 50%;
         border-left: 50px solid transparent;
         border-right: 50px solid transparent;
-        border-top: 50px solid #2C9944;
+        border-top: 50px solid #20336D;
         transform: translate(-50%);
-    }
+}
+
+}
+
 
 
 h4 {
@@ -217,8 +232,6 @@ h4 {
   }
 
   }
-
-
   
 .slick-slide {
     display: flex;
@@ -252,39 +265,56 @@ h4 {
 
 .slick-prev {
   border-width: 20px 25px 20px 0 !important;
-  border-color: transparent #2C9944 transparent transparent !important;
-  left: -60px;
+  border-color: transparent #20336D transparent transparent !important;
+  left: -60px !important;
 }
 
 .slick-next {
   border-width: 20px 0 20px 25px !important;
-  border-color: transparent transparent transparent #2C9944 !important;
-  right: -60px;
-}
-
-.other,container {
-    display: block;
-    text-align: center;
-
-    p {
-        margin-top: 100px;
-    }
+  border-color: transparent transparent transparent #20336D !important;
+  right: -60px !important;
 }
 
 /*オフ会*/
-.garalley-track {
-  margin-top: 80px;
-  display: flex;
-  gap: 20px;
-  animation: scrollLoop 25s linear infinite;
-  width: max-content;
+.other {
+    width: 100%;
+    overflow: hidden;
+    display: block;
+    box-sizing: border-box;
+    text-align: center;
+
+    .text1 {
+        margin-top: 100px;
+    }
+}
+.other .garalley-track {
+    position: relative;
+    margin-top: 80px;
+    display: flex;
+    gap: 20px;
+    animation: scrollLoop 25s linear infinite;
+    width: max-content;
+    will-change: max-content;
+    
+
 }
 
-.garalley-item img {
-  width: 300px;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 10px;
+.other .garalley-item {
+    flex-shrink: 0;
+    img {
+        width: 300px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+        display: block;
+          }
+        
+    p {
+        margin-top: 10px;
+        font-size: 16px;
+        width: 300px;
+    }
+    
 }
 
 @keyframes scrollLoop {
@@ -294,59 +324,81 @@ h4 {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // レスポンシブ
 @include respond(md){
     .global-nav{
         width: 90%;
     }
+
+    .metaleaf {
+        min-height: 40vh;
+        width: 100%;
+
+        img {
+            width: 100px;
+        }
+
+        h1 {
+            font-size: 100px;
+        }
+
+        
+    }
+    
+    h3 {
+        font-size: 2rem;
+    }
+
+    h4 {
+        font-size: 4em;
+    }
+
+    .nav-list { 
+        margin-left: 0; 
+    }
+
+    .slick-prev, .slick-next {
+    top: 50%;
+    z-index: 100;
+  }
+
+  .slick-prev {
+    left: 10px !important;
+    border-width: 14px 16px 14px 0 !important;
+  }
+
+  .slick-next {
+    right: 10px !important;
+    border-width: 14px 0 14px 16px !important;
+  }
+
+  .slick-prev, .slick-next {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
+
+  .slide-item img {
+    width: 90%;
+    height: 450px;
+    margin: 0 auto;
+  }
+
+  .howto-slide {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.slick-prev, .slick-next {
+    position: absolute;
+   top: 50%;
+   transform: translateY(-50%);
+   z-index: 20;
+}
+}
+
 
 @include respond(sm) {
     .global-nav {
@@ -420,4 +472,37 @@ h4 {
         background: white;
         border-radius: 999px;
     }
+
+    .metaleaf {
+        min-height: 35vh;
+    }
+
+    h2 {
+        font-size: 1.5em !important;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    .slick-prev {
+    border-width: 14px 16px 14px 0 !important;
+    top: 50%;
+    z-index: 100;
+    left: 5px !important;
+  }
+
+  .slick-next {
+      border-width: 14px 0 14px 16px !important;
+      top: 45%;
+      z-index: 100;
+      right: 4px !important;
+  }
+
+  .slide-item img {
+      width: 85%;
+      height: 300px;
+      object-fit: cover;
+      object-position: center;
+  }
 }

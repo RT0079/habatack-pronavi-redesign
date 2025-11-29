@@ -110,7 +110,23 @@ document.addEventListener('DOMContentLoaded', () => {
   centerPadding: '0px',
   arrows: true,
   prevArrow: '<button class="slick-prev"></button>',
-  nextArrow: '<button class="slick-next"></button>'
+  nextArrow: '<button class="slick-next"></button>',
+  responsive: [
+    {
+      breakpoint: 960,
+      settings : {
+        arrows: true,
+        centerPadding: '20px',
+      }
+    },
+    {
+      breakpoint: 640,
+      setting : {
+        arrows: true,
+        centerPadding: '10px',
+      }
+    }
+  ]
  });
  $(document).ready(function(){
   const imgHeight = $('.slide-item img').height();
@@ -124,3 +140,15 @@ document.addEventListener('DOMContentLoaded', () => {
     right: '-60px'  
   });
 });
+
+// FAQのアコーディオン
+$(function() {
+  $(".faq-question").on("click", function() {
+    const answer = $(this).next(".faq-answer");
+    const toggle = $(this).find(".faq-taggle");
+
+    toggle.toggleClass('open');                 
+    answer.stop(true, true).slideToggle();
+  });
+});
+
