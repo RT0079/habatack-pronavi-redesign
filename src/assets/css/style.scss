@@ -832,7 +832,11 @@
 
 // デフォルトで「サイトを見る」リンクは非表示（レスポンシブ側で表示制御）
 .graduate-link{
-    display: none;
+    position: absolute;
+    inset: 0;
+    display: block;
+    text-indent: -9999px; // 視覚非表示だがクリック可能
+    cursor: pointer;
 }
 
 // footer
