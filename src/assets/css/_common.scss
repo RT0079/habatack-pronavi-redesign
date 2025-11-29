@@ -18,6 +18,11 @@ $breakpoints: (
     sm: 640px
 );
 
+// ナビ高さ（stickyオフセット用）
+:root {
+    --nav-offset: 6rem;
+}
+
 @mixin respond($size) {
     $value: map.get($breakpoints, $size);
     @if $value {
@@ -31,6 +36,22 @@ $breakpoints: (
     }
 }
 
+// 共通: 見出しに左右バーを付ける
+@mixin h2-with-bars($bar-width: 55px, $bar-height: 5px, $bar-color: currentColor, $gap: 20px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: $gap;
+    text-align: center;
 
+    &::before,
+    &::after {
+        content: "";
+        display: block;
+        width: $bar-width;
+        height: $bar-height;
+        background-color: $bar-color;
+    }
+}
 
 

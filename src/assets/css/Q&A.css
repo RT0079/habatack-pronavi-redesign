@@ -1,5 +1,9 @@
 @charset "UTF-8";
 /* ========== 変数 ========== */
+:root {
+  --nav-offset: 6rem;
+}
+
 /* =========================================
    _reset.scss  |  Minimal Reset + Base (2025)
    - ブラウザ差を最小限に抑える軽量リセット
@@ -16,7 +20,7 @@ html,
 body {
   margin: 0;
   padding: 0;
-  min-width: 320px; /* スマホ極小幅での崩れ防止 */
+  min-width: 360px; /* スマホ極小幅での崩れ防止 */
 }
 
 h1, h2, h3, h4, h5, h6 {
