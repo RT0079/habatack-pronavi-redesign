@@ -280,13 +280,13 @@ body {
         width: 30px;
         height: 30px;
 
-        &::after {
+        &::before {
             width: 13px;
-            height: 1px;
+            height: 2px;
         }
     
-        &::before {
-            width: 1px;
+        &::after {
+            width: 2px;
             height: 13px;
         }
 
@@ -385,13 +385,13 @@ body {
         width: 25px;
         height: 25px;
 
-        &::after {
+        &::before {
             width: 10px;
-            height: 1px;
+            height: 2px;
         }
     
-        &::before {
-            width: 1px;
+        &::after {
+            width: 2px;
             height: 10px;
         }
         

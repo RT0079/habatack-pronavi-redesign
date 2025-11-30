@@ -317,12 +317,12 @@ body {
     width: 30px;
     height: 30px;
   }
-  .faq-taggle::after {
-    width: 13px;
-    height: 1px;
-  }
   .faq-taggle::before {
-    width: 1px;
+    width: 13px;
+    height: 2px;
+  }
+  .faq-taggle::after {
+    width: 2px;
     height: 13px;
   }
 }
@@ -401,12 +401,12 @@ body {
     width: 25px;
     height: 25px;
   }
-  .faq-taggle::after {
-    width: 10px;
-    height: 1px;
-  }
   .faq-taggle::before {
-    width: 1px;
+    width: 10px;
+    height: 2px;
+  }
+  .faq-taggle::after {
+    width: 2px;
     height: 10px;
   }
 }/*# sourceMappingURL=Q&A.css.map */
